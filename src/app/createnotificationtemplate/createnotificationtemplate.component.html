@@ -1,0 +1,34 @@
+<div class="create-campaign-form">
+    <h2>Create New Template</h2>
+    
+    <!-- Campaign Name Field -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Template Name</mat-label>
+      <input matInput [(ngModel)]="campaign.name" placeholder="Enter template name" required>
+    </mat-form-field>
+  
+      <!-- Campaign Name Field -->
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Template Email</mat-label>
+        <input matInput [(ngModel)]="campaign.type" placeholder="Enter email" required>
+      </mat-form-field>
+    
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Audience Group</mat-label>
+        <input matInput [(ngModel)]="campaign.audience_group" placeholder="Enter email" required>
+      </mat-form-field>
+
+    <!-- Campaign Description Field -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Template Status</mat-label>
+      <textarea matInput [(ngModel)]="campaign.description" placeholder="Enter status" ></textarea>
+    </mat-form-field>
+  
+  
+    <!-- Submit and Cancel Buttons -->
+    <div class="form-actions">
+        <button mat-raised-button color="warn" class="right-button" (click)="onCancel()">Cancel</button>
+      <button mat-raised-button color="primary" class="right-button" (click)="onSubmit()">Create</button>
+    </div>
+  </div>
+  

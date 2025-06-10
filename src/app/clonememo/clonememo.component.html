@@ -1,0 +1,49 @@
+<h8 mat-dialog-title>
+     <!-- Display text and edit icon -->
+  <div *ngIf="!isEditing" class="text-container">
+    <span>{{ editableText }}</span> 
+    <mat-icon (click)="enableEdit()">edit</mat-icon> <!-- Edit icon -->
+  </div>
+
+  <!-- Input field to edit the text -->
+  <div *ngIf="isEditing" class="edit-container">
+    <input [(ngModel)]="editableText" placeholder="Enter text here" />
+    <button mat-button class="right-button" (click)="saveEdit()">Save</button>
+    <button mat-button class="right-button" (click)="cancelEdit()">Cancel</button>
+  </div>
+  </h8>
+  
+  <mat-dialog-content>
+    <button mat-button (click)="exportToWord()" class="export-btn">Export to Word</button>
+
+    <!-- Quill Editor Container -->
+    <div class="dropdown-container">
+      <!-- Dropdown for Predefined Text Snippets -->
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label>Dynamic Merge Tags</mat-label>
+        <mat-select [(value)]="selectedText" (selectionChange)="onSnippetSelect($event)">
+            <mat-option *ngFor="let snippet of textSnippets" [value]="snippet" matTooltip="{{'<employeeList1>'}}" matTooltipPosition="above">
+                {{ snippet }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <!-- Drag-and-drop text container that updates based on selected snippet -->
+    <div *ngIf="selectedText" class="draggable-text" 
+         [draggable]="true" (dragstart)="onDragStart($event, selectedText)">
+        {{ selectedText }}
+    </div>
+  </div>
+    <div #editorContainer id="editor" 
+    style="height: 700px; width: 100%;" 
+    (drop)="onDrop($event)" 
+    (dragover)="onDragOver($event)">
+</div> 
+
+</mat-dialog-content>
+  
+  <mat-dialog-actions>
+    <button mat-button class="right-button" (click)="cancel()">Cancel</button>
+    <button mat-button class="right-button" color="primary" (click)="saveChanges()">Save</button>
+  </mat-dialog-actions>
+  

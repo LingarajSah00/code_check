@@ -1,0 +1,195 @@
+/* Default table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensure consistent column width */
+  }
+  
+  th.mat-header-cell, td.mat-cell {
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .mat-elevation-z8 {
+    position: relative; /* Make this container a reference for absolute positioning */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    overflow: hidden; /* To avoid any overflow issues */
+  }
+  
+  /* Responsive Design */
+  .download-btn {
+    top: 10px; /* Adjust distance from top */
+    right: -560px; /* Adjust distance from right */
+    z-index: 10; /* Ensure it stays above other elements */
+  }
+  
+  /* Making table scrollable horizontally on smaller screens */
+  @media screen and (max-width: 768px) {
+    table {
+      display: block;
+      overflow-x: auto; /* Allow horizontal scrolling */
+      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+  
+    th.mat-header-cell, td.mat-cell {
+      text-align: left; /* Align text to left for readability on small screens */
+      white-space: nowrap; /* Prevent wrapping of long text */
+    }
+  
+    /* Adjust download button on small screens */
+    .download-btn {
+      top: 15px;  /* Increase top margin if needed */
+      right: 15px; /* Keep it away from the edge */
+    }
+  }
+  
+  /* Further adjustments for mobile */
+  @media screen and (max-width: 480px) {
+    .download-btn {
+      top: 10px; /* Slightly more space on very small screens */
+      right: 5px;
+    }
+    
+    .mat-elevation-z8 {
+      padding: 15px; /* Add some padding on smaller screens for better spacing */
+    }
+  }
+ 
+  .mat-elevation-z8 {
+    position: relative; /* Ensures the button is positioned relative to this container */
+  }
+  
+  .create-button {
+    top: 10px;    /* Distance from the top of the container */
+    right: -370px;  /* Distance from the right of the container */
+    z-index: 10;  /* Ensure it stays above other elements */
+  }
+  .create-button {
+    background-color: #cc0000; /* Red background */
+    color: white; /* Black text */
+  }
+  
+  .create-button:hover {
+    background-color: darkred; /* Darker shade when hovering */
+    color: white; /* White text on hover */
+  }
+
+  .download-btn  {
+    background-color: #cc0000; /* Red background */
+    color: white; /* Black text */
+  }
+  
+  .download-btn :hover {
+    background-color: darkred; /* Darker shade when hovering */
+    color: white; /* White text on hover */
+  }
+
+  /* Style the Edit and Delete buttons */
+table td button {
+  margin-right: 5px; /* Add space between buttons */
+  padding: 5px 10px; /* Padding inside the buttons */
+  cursor: pointer; /* Add pointer cursor */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition on hover */
+  font-weight: bold; /* Optional: Make the button text bold */
+}
+
+/* Specific red color for Edit button */
+table td button.edit-btn {
+  background-color: #cc0000; /* Red background for Edit */
+  color: white; /* White text */
+  border: none; /* Remove border */
+}
+
+/* Hover effect for Edit button */
+table td button.edit-btn:hover {
+  background-color: darkred; /* Darker red on hover */
+  color: white; /* Keep text white on hover */
+}
+
+/* Specific red color for Delete button */
+table td button.delete-btn {
+  background-color: #cc0000; /* Red background for Delete */
+  color: white; /* White text */
+  border: none; /* Remove border */
+}
+
+/* Hover effect for Delete button */
+table td button.delete-btn:hover {
+  background-color: darkred; /* Darker red on hover */
+  color: white; /* Keep text white on hover */
+}
+
+/* Optional: Add custom styles for when the button is clicked (pressed state) */
+table td button:active {
+  background-color: #b30000; /* Darker red when the button is pressed */
+}
+
+.edit-icon, .delete-icon {
+  cursor: pointer;
+  font-size: 24px; /* Adjust the size of the icon */
+  margin-right: 8px; /* Space between icons */
+}
+.edit-icon:hover {
+  color: green; /* Change color on hover */
+}
+.delete-icon:hover {
+  color: red; /* Change color on hover */
+}
+
+.edit-icon {
+  background-color: #d3d3d3;   /* Light grey background */
+  padding: 10px;                /* Add padding around the icon */
+  display: inline-flex;         /* Ensure the icon is inline-flex to center it */
+  align-items: center;          /* Center the icon vertically */
+  justify-content: center;      /* Center the icon horizontally */
+  transition: background-color 0.3s ease;  /* Smooth transition on hover */
+}
+
+.delete-icon {
+  background-color: #d3d3d3;   /* Light grey background */
+  padding: 10px;                /* Add padding around the icon */
+  display: inline-flex;         /* Ensure the icon is inline-flex to center it */
+  align-items: center;          /* Center the icon vertically */
+  justify-content: center;      /* Center the icon horizontally */
+  transition: background-color 0.3s ease;  /* Smooth transition on hover */
+}
+.button-row {
+  display: flex;
+  justify-content: flex-start; /* Align to left */
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.button-row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.download-btn,
+.create-button {
+  background-color: #cc0000;
+  color: white;
+  position: relative; /* Allows stacking without absolute chaos */
+}
+
+.download-btn:hover,
+.create-button:hover {
+  background-color: darkred;
+}
+
+/* Responsive layout for small screens */
+@media screen and (max-width: 768px) {
+  .button-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .download-btn,
+  .create-button {
+    width: 100%; /* full width on mobile for better touch targets */
+  }
+}

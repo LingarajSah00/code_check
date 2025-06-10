@@ -1,0 +1,43 @@
+<div class="create-campaign-form">
+    <h2>Create New Campaign</h2>
+    
+    <!-- Campaign Name Field -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Campaign Name</mat-label>
+      <input matInput [(ngModel)]="campaign.name" placeholder="Enter campaign name" required>
+    </mat-form-field>
+  
+      <!-- Campaign Name Field -->
+      <mat-form-field appearance="fill" class="form-field">
+        <mat-label>Campaign Type</mat-label>
+        <input matInput [(ngModel)]="campaign.type" placeholder="Enter campaign type" required>
+      </mat-form-field>
+    
+    <!-- Campaign Description Field -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Campaign Description</mat-label>
+      <textarea matInput [(ngModel)]="campaign.description" placeholder="Enter description" ></textarea>
+    </mat-form-field>
+  
+     <!-- Status Selection -->
+     <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Template</mat-label>
+      <mat-select [(ngModel)]="campaign.template">
+        <mat-option *ngFor="let template of templates" [value]="template">{{template}}</mat-option>
+      </mat-select>
+      </mat-form-field>
+    <!-- Status Selection -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Status</mat-label>
+      <mat-select [(ngModel)]="campaign.status">
+        <mat-option *ngFor="let status of statuses" [value]="status">{{status}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <!-- Submit and Cancel Buttons -->
+    <div class="form-actions">
+        <button mat-raised-button color="warn" class="right-button" (click)="onCancel()">Cancel</button>
+      <button mat-raised-button color="primary" class="right-button" (click)="onSubmit()">Create</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,43 @@
+<h2 mat-dialog-title><font color="#cc0000">Send Notification Test Mail</font></h2>
+
+<div class="icon-container">
+  <!-- <img src="assets/wel1.png" alt="Confirmation" class="confirmation-icon"> -->
+</div>
+<mat-dialog-content>
+  <!-- Email Input -->
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Enter email address</mat-label>
+    <input matInput [(ngModel)]="email" (keyup.enter)="sendEmail()">
+  </mat-form-field>
+
+  <!-- Email Attempt Dropdown -->
+  <mat-form-field appearance="fill" style="width: 100%;">
+    <mat-label>Email Attempt</mat-label>
+    <mat-select [(value)]="selectedEmailAttempt">
+      <mat-option *ngFor="let attempt of emailAttempts" [value]="attempt">
+        {{ attempt }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Needed Date Picker -->
+  <mat-form-field appearance="fill">
+    <mat-label>Needed By</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="neededDate" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  
+
+  <!-- Checkbox for Terms -->
+  <mat-checkbox [(ngModel)]="termsAccepted">SHUT OFF Conditions Reached?</mat-checkbox>
+  <mat-checkbox >Colleague is DCNE Employee?</mat-checkbox>
+  <mat-checkbox checked="all">Colleague has own email address?</mat-checkbox>
+  <mat-checkbox >Colleague does NOT have own email address?</mat-checkbox>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="closeDialog()" class="right-button">Cancel</button>
+  <button mat-button color="primary" (click)="sendEmail()"class="right-button">Send</button>
+</mat-dialog-actions>

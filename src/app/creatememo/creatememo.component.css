@@ -1,0 +1,267 @@
+.create-campaign-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    justify-content: right;
+  }
+  
+  .form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: right;
+    margin-top: 20px;
+  }
+  
+
+  .right-button {
+    background-color: #cc0000; /* Red background */
+    color: white; /* Black text */
+  }
+  
+  .right-button:hover {
+    background-color: darkred; /* Darker shade when hovering */
+    color: white; /* White text on hover */
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+  
+  quill-editor {
+    height: 700px; /* Adjust height as needed */
+  }
+  /* edit-template-dialog.component.css */
+angular-editor {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  .right-button {
+    background-color: #cc0000; /* Red background */
+    color: white; /* Black text */
+  }
+  
+  .right-button:hover {
+    background-color: darkred; /* Darker shade when hovering */
+    color: white; /* White text on hover */
+  }
+
+  ::ng-deep .mat-dialog-container {
+    width: 90%; /* Set to 90% of the screen width or a custom value */
+    max-width: 1000px; /* Max width of the dialog */
+    height: auto; /* Let the height adjust automatically */
+    max-height: 80vh; /* Max height to ensure it doesn't take up too much vertical space */
+    padding: 20px; /* Add some padding for a more spacious look */
+    box-sizing: border-box; /* Ensure padding doesn't affect the total width */
+  }
+  #editor {
+    height: 300px; /* Adjust this based on your needs */
+  }
+  .cdk-overlay-pane mat-mdc-dialog-panel{
+    width: 609px;
+    position: static;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  .ql-toolbar {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .ql-toolbar select {
+    margin-left: 10px;
+    padding: 5px;
+  }
+
+  .editor-container {
+    height: 700px; /* Maintain your custom height */
+    width: 100%;   /* Set width to 100% */
+    max-width: 1200px;  /* Limit width to 1200px */
+
+  }
+
+  .mat-dialog-container {
+    width: 900px !important;  /* Make sure the dialog container width is fixed */
+    height: 700px !important;  /* Same for height */
+  }
+  
+  #editor {
+    width: 100% !important;  /* Ensure the editor stretches to fill the dialog */
+    height: 100% !important; /* Make the editor fill the container */
+  }
+  
+  /* Quill Editor Styling */
+/* Quill Editor Styling */
+#editor {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 400px;
+  background-color: #fff;
+}
+
+/* Flexbox container for the dropdown and draggable text */
+.dropdown-container {
+  display: absolute;
+  justify-content: space-between;
+  align-items: flex-start;  /* Align elements to the start of the container */
+  margin-bottom: 20px;  /* Add some space below the elements */
+}
+
+.editor-footer {
+  position: absolute; /* Fix the button on the screen */
+  top: 14px; /* Adjust the distance from the top of the screen */
+  right: 230px; /* Place it on the right side */
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 9999; /* Ensure it's above other elements */
+}
+/* Dropdown Styling */
+mat-form-field {
+  width: 45%;  /* Set the dropdown width to 45% of the parent container */
+}
+
+/* Draggable Text Styling */
+.draggable-text-container {
+  width: 45%;  /* Set the container for draggable text to 45% of the parent */
+  max-height: 300px;  /* Limit the height for better control */
+  overflow-y: auto;  /* Allow scrolling if content exceeds height */
+}
+/* Styling for draggable text */
+.draggable-text {
+  cursor: grab;
+  padding: 10px;
+  background-color: #f1f1f1;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  display: inline-block;
+  max-width: 300px;
+}
+
+/* Optional: Apply hover effect to make the text visually interactive */
+.draggable-text:hover {
+  background-color: #e0e0e0;
+}
+
+.export-btn {
+  position: absolute; /* Fix the button on the screen */
+  right: 85px; /* Place it on the right side */
+  background-color: #cc0000;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 9999; /* Ensure it's above other elements */
+}
+
+.export-btn:hover {
+  background-color: #303f9f; /* Change color on hover */
+}
+
+.ql-undo, .ql-redo {
+  background-color: #f1f1f1;  /* Background color */
+  border: 1px solid #ccc;  /* Border around buttons */
+  padding: 5px 10px;  /* Padding for better button size */
+  margin-right: 5px;  /* Space between buttons */
+  cursor: pointer;  /* Pointer cursor on hover */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ql-undo:hover, .ql-redo:hover {
+  background-color: #e0e0e0;  /* Background color on hover */
+}
+
+.mat-icon {
+  color: #333;  /* Color of the icon */
+  font-size: 20px;  /* Font size for the icon */
+}
+
+.ql-undo, .ql-redo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.ql-toolbar .ql-line-height {
+  margin-left: 10px; /* Space the dropdown out from the other options */
+  padding: 2px; /* Add some padding to make it look better */
+}
+.right-button1 {
+  background-color: #f0f0f0;  /* Light gray background */
+  border-radius: 6px;
+  padding: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); /* Optional soft shadow */
+  border: 1px solid #ccc;
+  transition: background-color 0.2s ease;
+}
+
+.right-button1:hover {
+  background-color: #e0e0e0;  /* Slightly darker on hover */
+}
+
+.fixed-button-group {
+  position: absolute;
+  top: 20px;
+  right: 30px; /* Adjust as needed */
+  display: flex;
+  gap: 10px;
+  z-index: 9999; /* Keep on top of everything */
+}
+
+/* Optional button tweaks */
+.export-btn {
+  white-space: nowrap; /* Prevents line break */
+  display: inline-flex; /* Keeps button content inline */
+  align-items: center; /* Vertically centers text */
+  justify-content: center; /* Horizontally centers content */
+  background-color: #e0e0e0;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px; /* Adjust as needed */
+  line-height: 1.2;
+  right: 198px;
+    transition: background-color 0.2s ease;
+
+}
+
+.export-btn:hover {
+  background-color: #303f9f;
+}
+
+.right-button1, .send-email-btn {
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  transition: background-color 0.2s ease;
+}
+
+.right-button1:hover, .send-email-btn:hover {
+  background-color: #e0e0e0;
+}

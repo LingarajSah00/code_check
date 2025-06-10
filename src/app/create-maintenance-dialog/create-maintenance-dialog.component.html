@@ -1,0 +1,58 @@
+<div class="mat-elevation-z8">
+    <h3>Maintenance Form</h3>
+  
+    <!-- Maintenance Form (Template-Driven Form) -->
+    <form #maintenanceForm="ngForm">
+      <mat-form-field appearance="fill">
+        <mat-label>ID</mat-label>
+        <input matInput [(ngModel)]="id" name="id" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Type</mat-label>
+        <input matInput [(ngModel)]="type" name="type" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="name" name="name" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Emp ID</mat-label>
+        <input matInput [(ngModel)]="emp_id" name="emp_id" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput [(ngModel)]="title" name="title" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Admin</mat-label>
+        <input matInput [(ngModel)]="admin" name="admin" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Admin ID</mat-label>
+        <input matInput [(ngModel)]="admin_id" name="admin_id" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Receive</mat-label>
+        <input matInput [(ngModel)]="receive" name="receive" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Status</mat-label>
+        <input matInput [(ngModel)]="status" name="status" required />
+      </mat-form-field>
+  
+      <!-- Buttons to submit or cancel -->
+      <div class="buttons">
+        <button mat-raised-button color="warn" class="right-button" (click)="closeDialog()">Cancel</button>
+        <button mat-raised-button color="primary" class="right-button1" (click)="submitForm()">Submit</button>
+      </div>
+    </form>
+  </div>
+  

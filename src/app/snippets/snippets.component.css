@@ -1,0 +1,145 @@
+table {
+    width: 100%;
+  }
+  
+  th.mat-header-cell {
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .mat-cell, .mat-header-cell {
+    padding: 10px;
+  }
+  
+  .mat-elevation-z8 {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+  
+
+ /* Style the Edit and Delete buttons */
+table td button {
+  margin-right: 5px; /* Add space between buttons */
+  padding: 5px 10px; /* Padding inside the buttons */
+  cursor: pointer; /* Add pointer cursor */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition on hover */
+  font-weight: bold; /* Optional: Make the button text bold */
+}
+
+/* Specific red color for Edit button */
+table td button.edit-btn {
+  background-color: #cc0000; /* Red background for Edit */
+  color: white; /* White text */
+  border: none; /* Remove border */
+}
+
+/* Hover effect for Edit button */
+table td button.edit-btn:hover {
+  background-color: darkred; /* Darker red on hover */
+  color: white; /* Keep text white on hover */
+}
+
+/* Specific red color for Delete button */
+table td button.delete-btn {
+  background-color: #cc0000; /* Red background for Delete */
+  color: white; /* White text */
+  border: none; /* Remove border */
+}
+
+/* Hover effect for Delete button */
+table td button.delete-btn:hover {
+  background-color: darkred; /* Darker red on hover */
+  color: white; /* Keep text white on hover */
+}
+
+/* Optional: Add custom styles for when the button is clicked (pressed state) */
+table td button:active {
+  background-color: #b30000; /* Darker red when the button is pressed */
+}
+
+/* Adjust for small screens */
+@media screen and (max-width: 768px) {
+    table td button {
+      font-size: 12px; /* Make the buttons smaller on small screens */
+      padding: 5px 8px; /* Adjust padding on mobile */
+    }
+  }  
+
+
+  .create-button {
+    margin-bottom: 20px;  /* Space between button and table */
+    margin-right: 10px;   /* Space on the right */
+  }
+  .mat-elevation-z8 {
+    position: relative; /* Ensures the button is positioned relative to this container */
+  }
+  
+  .create-button {
+    position: absolute;
+    top: 10px;    /* Distance from the top of the container */
+    right: 85px;  /* Distance from the right of the container */
+    z-index: 10;  /* Ensure it stays above other elements */
+  }
+  .create-button {
+    background-color: #cc0000; /* Red background */
+    color: white; /* Black text */
+  }
+  
+  .create-button:hover {
+    background-color: darkred; /* Darker shade when hovering */
+    color: white; /* White text on hover */
+  }
+
+
+  /* Download CSV button */
+.download-btn {
+  background-color: #cc0000; /* Red background */
+  color: white; /* White text */
+ 
+}
+
+.download-btn {
+  position: absolute;
+  top: 10px;    /* Distance from the top of the container */
+  right: 10px;  /* Distance from the right of the container */
+  z-index: 10;  /* Ensure it stays above other elements */
+}
+.download-btn:hover {
+  background-color: darkred; /* Darker shade when hovering */
+  color: white; /* White text on hover */
+}
+
+.edit-icon, .delete-icon {
+  cursor: pointer;
+  font-size: 24px; /* Adjust the size of the icon */
+  margin-right: 8px; /* Space between icons */
+}
+.edit-icon:hover {
+  color: green; /* Change color on hover */
+}
+.delete-icon:hover {
+  color: red; /* Change color on hover */
+}
+
+.edit-icon {
+  background-color: #d3d3d3;   /* Light grey background */
+  padding: 10px;                /* Add padding around the icon */
+  display: inline-flex;         /* Ensure the icon is inline-flex to center it */
+  align-items: center;          /* Center the icon vertically */
+  justify-content: center;      /* Center the icon horizontally */
+  transition: background-color 0.3s ease;  /* Smooth transition on hover */
+}
+
+.delete-icon {
+  background-color: #d3d3d3;   /* Light grey background */
+  padding: 10px;                /* Add padding around the icon */
+  display: inline-flex;         /* Ensure the icon is inline-flex to center it */
+  align-items: center;          /* Center the icon vertically */
+  justify-content: center;      /* Center the icon horizontally */
+  transition: background-color 0.3s ease;  /* Smooth transition on hover */
+}
+
+.campaign-link {
+  color: #3f51b5;
+  cursor: pointer;
+  text-decoration: underline;
+}

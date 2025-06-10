@@ -1,0 +1,15 @@
+mat-dialog-content {
+    padding: 20px;
+  }
+  mat-form-field {
+    width: 100%;
+  }
+  .right-button {
+    background-color: #cc0000; /* Red background */
+    color: white; /* Black text */
+  }
+  
+  .right-button:hover {
+    background-color: darkred; /* Darker shade when hovering */
+    color: white; /* White text on hover */
+  }

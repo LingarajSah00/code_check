@@ -1,0 +1,13 @@
+.create-button {
+    background-color: #cc0000; /* Red background */
+    color: white; /* Black text */
+  }
+  
+  .create-button:hover {
+    background-color: darkred; /* Darker shade when hovering */
+    color: white; /* White text on hover */
+  }
+  .mat-mdc-button:not(:disabled) {
+    color: var(--mdc-text-button-label-text-color, var(--mat-sys-primary));
+    background-color: #cc0000;
+}

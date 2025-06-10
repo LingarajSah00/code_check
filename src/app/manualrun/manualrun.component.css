@@ -1,0 +1,316 @@
+
+table {
+  width: 100%;
+}
+
+th.mat-header-cell {
+  font-weight: bold;
+  text-align: center;
+}
+
+.mat-cell, .mat-header-cell {
+  padding: 10px;
+}
+
+.mat-elevation-z8 {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.row {
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px; /* Space between buttons */
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.edit-btn, .cancel-btn {
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #cc0000; /* Red background */
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.edit-btn:hover, .cancel-btn:hover {
+  opacity: 0.8;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.styled-btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px; /* Rounded button */
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  min-width: 150px;
+}
+
+.form-group {
+  margin-top: 20px;
+display: flex;
+align-items: center; /* Aligns items vertically */
+gap: 10px; /* Adds spacing between label and input */
+margin-bottom: 15px; /* Adds spacing below the row */
+}
+
+.input-medium {
+width: 250px; /* Adjust width to fit well */
+padding: 8px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+.run-btn {
+  background-color: green;
+  color: white;
+}
+
+.styled-btn:hover {
+  opacity: 0.8;
+}
+
+.form-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.full-width {
+  flex-grow: 1;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.medium-width {
+  width: 500px;
+}
+
+.start-btn {
+  background-color: green;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #CC0000;
+  color: white;
+}
+
+mat-tab {
+  display: flex;
+  justify-content: space-between; /* Spread the child divs evenly across the row */
+  padding: 10px;
+}
+
+.container {
+  display: flex; /* Align div5 and div6 side by side */
+  width: 100%;
+}
+/* Style the Action buttons */
+table td button {
+  margin-right: 5px;  /* Add space between buttons */
+  padding: 5px 10px;  /* Padding inside the buttons */
+  cursor: pointer;    /* Add pointer cursor */
+  transition: background-color 0.3s ease, color 0.3s ease;  /* Smooth transition on hover */
+  font-weight: bold;   /* Optional: Make the button text bold */
+}
+
+/* Edit button */
+table td button.edit-btn {
+  background-color: #cc0000;  /* Red background for Edit */
+  color: white;               /* White text */
+  border: none;               /* Remove border */
+}
+
+/* Hover effect for Edit button */
+table td button.edit-btn:hover {
+  background-color: darkred;  /* Darker red on hover */
+  color: white;               /* Keep text white on hover */
+}
+
+/* Align the Action column contents */
+mat-cell.mat-cell {
+  text-align: center; /* Center the buttons */
+}
+
+/* Ensure consistent vertical alignment */
+mat-header-cell, mat-cell {
+  vertical-align: middle; /* Align all content vertically to the center */
+}
+/* Adjust padding and margin for the Action column */
+mat-header-cell.mat-header-cell, mat-cell.mat-cell {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 0; /* Remove any top margin */
+  margin-bottom: 0; /* Remove any bottom margin */
+}
+
+/* You can also adjust for the action buttons if they are causing issues */
+table td button {
+  margin-top: 0;  /* Ensure no extra margin is added to the button */
+  padding: 5px 10px;
+}
+/* Center align content in Action column */
+mat-column-actions {
+  text-align: center; /* Align the actions column text/buttons */
+}
+
+mat-header-cell.mat-header-cell {
+  text-align: center; /* Center the header content */
+}
+mat-header-row, mat-row {
+  display: flex;
+  align-items: center;  /* Align everything vertically in the center */
+}
+.mat-row {
+  height: auto;  /* Allow rows to expand based on content */
+}
+/* Adjust Action column specific styling */
+mat-cell.mat-cell:last-child, mat-header-cell.mat-header-cell:last-child {
+  text-align: center;
+}
+mat-table {
+  background-color: #f5f5f5;  /* Light gray background */
+}
+.timer {
+  font-size: 1.5rem;  /* Increase font size */
+  font-weight: bold;  /* Make it bold */
+  color: #f44336;     /* Change text color (e.g., red) */
+  background-color: #b3b2ab;  /* Background color (e.g., yellow) */
+  padding: 5px 10px;  /* Add padding around the timer */
+  border-radius: 5px; /* Round the corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+}
+
+
+.create-button {
+  background-color: #cc0000; /* Red background */
+  color: white; /* Black text */
+}
+
+.create-button:hover {
+  background-color: darkred; /* Darker shade when hovering */
+  color: white; /* White text on hover */
+}
+.message-box {
+  margin-top: 20px;
+}
+.large-width {
+  width: 100%; /* Adjust the width as needed */
+}
+
+mat-form-field textarea {
+  height: 150px; /* Adjust height as needed */
+  resize: vertical; /* Allows user to resize the field vertically */
+}
+/* In the component's CSS file */
+.message-cell {
+  white-space: normal; /* Allows text to wrap */
+  word-wrap: break-word; /* Breaks long words if necessary */
+  max-width: 250px; /* Set a maximum width for the message cell */
+  overflow: hidden;
+}
+
+/* Ensure all table columns have consistent width */
+mat-table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+mat-header-cell, mat-cell {
+  padding: 8px;
+  text-align: left; /* Align text to the left */
+}
+
+mat-column-message {
+  width: 250px; /* Allow this column to adjust based on content */
+  word-wrap: break-word;
+}
+
+.expandable-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit number of visible lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+button.expand-button {
+  font-size: 12px;
+  margin-top: 5px;
+  padding: 2px 6px;
+}
+.table-container {
+  max-height: 400px; /* Set a max-height */
+  overflow-y: auto;  /* Make the table scrollable */
+}
+
+.mat-cell {
+  white-space: normal; /* Allows wrapping */
+  word-wrap: break-word; /* Ensures that long words break and wrap to the next line */
+}
+
+.email-cell {
+  max-width: 300px;  /* Adjust the max-width as needed */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.email-cell {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  mat-table {
+    width: 100%;
+  }
+  .mat-row {
+    display: block;
+    margin-bottom: 10px; /* Add spacing between rows */
+  }
+  .mat-cell {
+    display: block; /* Stack cells vertically */
+    width: 100%;
+    padding: 5px;
+    word-wrap: break-word;
+  }
+}
+.edit-icon {
+  background-color: #d3d3d3;   /* Light grey background */
+  padding: 10px;                /* Add padding around the icon */
+  display: inline-flex;         /* Ensure the icon is inline-flex to center it */
+  align-items: center;          /* Center the icon vertically */
+  justify-content: center;      /* Center the icon horizontally */
+  transition: background-color 0.3s ease;  /* Smooth transition on hover */
+}
+
+.delete-icon {
+  background-color: #d3d3d3;   /* Light grey background */
+  padding: 10px;                /* Add padding around the icon */
+  display: inline-flex;         /* Ensure the icon is inline-flex to center it */
+  align-items: center;          /* Center the icon vertically */
+  justify-content: center;      /* Center the icon horizontally */
+  transition: background-color 0.3s ease;  /* Smooth transition on hover */
+}
+

@@ -1,0 +1,58 @@
+
+<div class="header">
+    <img class="welcome1" src="assets/wel1.png" alt="wel2">
+    <h2>Compliance Notification Administration</h2>
+  </div>
+<div class="login-container">
+    <div class="login-box">
+        <img class="welcome-image" src="assets/wel1.png" alt="wel1">
+
+      <h1 class="header1">Welcome</h1>
+  
+      <!-- <button mat-raised-button color="primary" (click)="showLoginForm = true">
+        Login to Compliance Notification to Continue
+      </button>
+  
+      <div *ngIf="showLoginForm">
+        <form (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput [(ngModel)]="username" name="username" required />
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput [(ngModel)]="password" name="password" type="password" required />
+          </mat-form-field>
+  
+          <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  
+          <button mat-raised-button color="primary" type="submit">Login to Notification</button>
+        </form>
+      </div> -->
+  
+      <!-- SSO Login Option -->
+      <div class="sso-login-options">
+        <button mat-raised-button class="blue-sso-btn" (click)="onLoginSSO()">
+          Login with SSO
+        </button>
+      </div>
+    </div>
+      <!-- Role selection dropdown -->
+      <mat-form-field appearance="fill">
+        <mat-label>Select Role</mat-label>
+        <mat-select [(ngModel)]="selectedRole" name="role" required>
+          <mat-option *ngFor="let role of roles" [value]="role">{{ role }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    <div class="alert-box error">
+        <div class="alert-icon">
+          <mat-icon>error_outline</mat-icon>
+        </div>
+        <p>{{ alertMessage }}</p>
+      </div>
+  </div>
+ 
+
+  
+  

@@ -1,0 +1,239 @@
+
+
+<mat-tab-group >
+  <!-- Manual Runs Tab -->
+  <mat-tab label="Manual Runs">
+   
+
+    <div class="form-container">
+      <div class="form-section">
+        <p>Target Audience</p>
+        <mat-checkbox [(ngModel)]="formData.targetAudienceAll" value="All"(change)="toggleAll('campaigns')">All</mat-checkbox>
+
+        <mat-form-field appearance="fill" class="small-width">
+          <mat-select multiple placeholder="Select Target Audience" [(ngModel)]="formData.targetAudience">
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2">Option 2</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="form-section">
+        <p>Campaign(s)</p>
+        <mat-checkbox [(ngModel)]="formData.campaignsAll" value="All">All</mat-checkbox>
+
+        <mat-form-field appearance="fill" class="medium-width">
+          <mat-select multiple placeholder="Select Campaigns" [(ngModel)]="formData.campaigns">
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2">Option 2</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <label for="adminEmail">Send From:</label>
+        <mat-form-field appearance="fill" class="medium-width">
+          <mat-select [(ngModel)]="formData.adminEmail" placeholder="Select email to send from">
+            <mat-option *ngFor="let email of emailList" [value]="email">{{ email }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <mat-form-field appearance="fill" class="large-width">
+          <textarea matInput [(ngModel)]="formData.message" placeholder="Enter your message" rows="5"></textarea>
+        </mat-form-field>
+      </div>
+
+     
+
+      <div class="button-container">
+        <button mat-button class="edit-btn" (click)="onClick()">Preview</button>
+        <button mat-button class="cancel-btn">Cancel</button>
+      </div>
+
+      <!-- Display submitted data below the form if it exists -->
+      <div *ngIf="submittedData.data.length > 0">  <!-- Access the 'data' property of MatTableDataSource -->
+        <h3 *ngIf="!showTimer">Jobs in Pipeline</h3>    
+      <h3 *ngIf="showTimer">Time Left toAutoTrigger Below Job:      <mat-icon>access_time</mat-icon><span class="timer">{{ timeLeft }}</span></h3> 
+      <div class="table-container">
+
+      <mat-table [dataSource]="submittedData" class="mat-elevation-z8">  <!-- Fix: Directly use submittedData -->
+        <ng-container matColumnDef="adminEmail">
+          <mat-header-cell *matHeaderCellDef> Send Email : </mat-header-cell>
+          <mat-cell *matCellDef="let element"> <span class="email-cell">{{ element.adminEmail }}</span></mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="targetAudience">
+          <mat-header-cell *matHeaderCellDef> Target Audience</mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <span *ngIf="element.targetAudienceAll">All</span>
+            <span *ngIf="!element.targetAudienceAll">{{ (element.targetAudience ?? []).join(', ') }}</span>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="campaigns">
+          <mat-header-cell *matHeaderCellDef> Campaign(s) </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <span *ngIf="element.campaignsAll">All</span>
+            <span *ngIf="!element.campaignsAll">{{ (element.campaigns ?? []).join(', ') }}</span>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="learnerCount">
+          <mat-header-cell *matHeaderCellDef> Learner Impacted</mat-header-cell>
+          <mat-cell *matCellDef="let element">5000</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="message">
+          <mat-header-cell *matHeaderCellDef> Message </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <div matTooltip="{{ element.message }}" class="expandable-text">
+              {{element.message | slice: 0:50}}...
+            </div>
+          </mat-cell>
+        </ng-container>
+        
+        
+ <!-- In Progress Column -->
+ <ng-container matColumnDef="inProgress">
+  <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+  <mat-cell *matCellDef="let element">
+    <span *ngIf="element.inProgress">In Progress</span>
+    <span *ngIf="!element.inProgress">Pending</span>
+  </mat-cell>
+</ng-container>
+        <!-- Actions Column (with Abort Button) -->
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <!-- Abort Button -->
+      <button mat-button  class="create-button" (click)="openConfirmationDialog1()">Stop</button>
+    </mat-cell>
+  </ng-container>
+        <mat-header-row *matHeaderRowDef="['adminEmail', 'targetAudience', 'campaigns', 'learnerCount','message', 'inProgress', 'actions']"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ['adminEmail', 'targetAudience', 'campaigns', 'learnerCount','message','inProgress','actions']"></mat-row>
+      </mat-table>
+      <br><br>
+      <!-- <mat-paginator [length]="submittedData.data.length" [pageSize]="5" [pageSizeOptions]="[5, 3, 5]" showFirstLastButtons></mat-paginator> -->
+</div>
+    </div>
+    </div>
+  </mat-tab>
+  <!-- History Tab -->
+  <mat-tab label="History">
+    <mat-form-field appearance="fill">
+      <mat-label>Search</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Search by Name or Email" />
+    </mat-form-field>
+    <div class="table-container">
+      <!-- Display Table in the History Tab -->
+      <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="audience">
+          <mat-header-cell *matHeaderCellDef> Audience </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.audience}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="campaigns">
+          <mat-header-cell *matHeaderCellDef> Campaigns </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.campaigns}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="notificationType">
+          <mat-header-cell *matHeaderCellDef> Notification Type </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.notificationType}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="dateRun">
+          <mat-header-cell *matHeaderCellDef> Date Run </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.dateRun | date}} </mat-cell>
+        </ng-container>
+        
+
+        <!-- <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef> Actions </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-button class="edit-btn">Abort</button>
+          </td>
+        </ng-container> -->
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <!-- Data Row -->
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+
+      
+    
+      <!-- <mat-paginator [length]="dataSource.data.length" [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator> -->
+    </div>
+      <!-- <div class="container">
+
+          <div class="div5">
+
+              <p>Compliance Data Database:</p>
+
+              <mat-form-field appearance="fill" style="width: 100%;">
+
+                  <mat-label>Select Option 1</mat-label>
+
+                  <mat-select>
+
+                      <mat-option value="option1">Option 1</mat-option>
+
+                      <mat-option value="option2">Option 2</mat-option>
+
+                      <mat-option value="option3">Option 3</mat-option>
+
+                  </mat-select>
+
+              </mat-form-field>
+
+              <p>Notification Letter Database:</p>
+
+              <mat-form-field appearance="fill" style="width: 100%;">
+
+                  <mat-label>Select Option 2</mat-label>
+
+                  <mat-select>
+
+                      <mat-option value="option1">Option 1</mat-option>
+
+                      <mat-option value="option2">Option 2</mat-option>
+
+                      <mat-option value="option3">Option 3</mat-option>
+
+                  </mat-select>
+
+              </mat-form-field>
+
+          </div>
+
+          <div class="div6">
+              <br><br>
+              <mat-checkbox>CLEAR EMPLOYEE_COMPLIANCE_COURSE TABLE</mat-checkbox>
+              <br>
+              <mat-checkbox>CLEAR EMPLOYEE_PASTDUE_ESCALATION TABLE</mat-checkbox>
+              <br>
+              <mat-checkbox>ONE OF EACH EMAIL TYPE ENCOUNTERED TO ADMINS ONLY</mat-checkbox>
+              <br>
+              <mat-checkbox>Generate PDF's when NOT sending emails</mat-checkbox>
+              <br>
+              <mat-checkbox checked>Display Output</mat-checkbox>
+              <br> <button mat-button class="edit-btn">Continue</button> <button mat-button
+                  class="cancel-btn">Cancel</button>
+
+          </div>
+
+      </div> -->
+
+  </mat-tab>
+</mat-tab-group>
+<!-- </div> -->

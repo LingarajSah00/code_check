@@ -1,0 +1,98 @@
+<h2 mat-dialog-title>Add Exclusion</h2>
+
+<mat-dialog-content>
+  <div style="display: flex; align-items: center;"  >
+    <span style="margin-right: 10px;">Select Type:</span> <!-- Text placed here -->
+    
+    <mat-radio-group [(ngModel)]="radioSelection" (change)="onRadioChange($event)" style="display: flex;">
+      <mat-radio-button value="option1">Employee</mat-radio-button>
+      <mat-radio-button value="option2">Location</mat-radio-button>
+      <mat-radio-button value="option3">Leader</mat-radio-button>
+      <mat-radio-button value="option4">Location(s)</mat-radio-button>
+
+    </mat-radio-group>
+  </div>
+
+  <div *ngIf="radioSelection">
+    <br><br>
+    <!-- Search Input Section with space and file upload aligned to the right -->
+    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+      <mat-form-field appearance="fill" style="flex: 1;">
+        <mat-label>Search for {{ radioSelection }}</mat-label>
+        <input matInput [formControl]="searchControl" [matAutocomplete]="auto" placeholder="Type to search"  />
+        <mat-icon matSuffix>search</mat-icon>
+
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{ option }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <!-- File Upload Button aligned to the right -->
+      <div *ngIf="radioSelection === 'option4'" style="margin-left: 30px; display: flex; align-items: center;border: 2px solid grey;border-radius: 5px;background-color: #f1f8ff;padding: 6px;margin-top: -17px;">
+        <input type="file" (change)="onFileSelected($event)" style="display: none;" #fileInput />
+        <button mat-icon-button (click)="fileInput.click()" matTooltip="Upload File">
+          <mat-icon>upload</mat-icon> <!-- File upload icon -->
+        </button>
+
+        <!-- Display the selected file name -->
+        <span *ngIf="selectedFile" style="margin-left: 10px;">{{ selectedFile.name }}</span>
+        <span *ngIf="!selectedFile" style="margin-left: 10px; color: #3f51b5;">Upload File</span>
+      </div>
+      <button mat-button style="margin-left: 10px;" class="right-button" (click)="onOkClick()">OK</button>
+
+    </div>
+  </div>
+
+  <div style="margin-top: 20px;width: 100%; ">
+    <mat-table [dataSource]="tableData">
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+
+      
+
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+      </ng-container>
+
+      <!-- Header Row -->
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <!-- Data Row -->
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+
+  <!-- Dropdowns side by side -->
+  <div style="display: flex; gap: 20px; margin-top: 20px;">
+    <!-- First Dropdown -->
+    <mat-form-field appearance="fill" style="flex: 1;">
+      <mat-label>No of days</mat-label>
+      <mat-select [(value)]="firstDropdownSelection">
+        <mat-option value="option1">30</mat-option>
+        <mat-option value="option2">45</mat-option>
+        <mat-option value="option3">60</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Second Dropdown -->
+    <mat-form-field appearance="fill" style="flex: 1;">
+      <mat-label>Campaign</mat-label>
+      <mat-select [(value)]="secondDropdownSelection">
+        <mat-option value="option1">All</mat-option>
+        <mat-option value="option2">Camp1</mat-option>
+        <mat-option value="option3">Camp2</mat-option>
+        <mat-option value="option3">Camp2</mat-option>
+
+      </mat-select>
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button class="right-button" (click)="closeDialog()">Cancel</button>
+  <button mat-button class="right-button" (click)="onSubmit()">Create</button>
+</mat-dialog-actions>

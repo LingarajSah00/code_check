@@ -1,0 +1,74 @@
+    <h2>Create New Memo</h2>
+    
+    <!-- Campaign Name Field -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Memo Name</mat-label>
+      <input matInput [(ngModel)]="campaign.name" placeholder="Enter memo name" required>
+    </mat-form-field>
+
+    <!-- Campaign Description Field -->
+    <!-- <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Memo Status</mat-label>
+      <textarea matInput [(ngModel)]="campaign.description" placeholder="Enter status" ></textarea>
+    </mat-form-field> -->
+
+
+  
+  
+    <!-- Submit and Cancel Buttons -->
+    <!-- <div class="form-actions">
+        <button mat-raised-button color="warn" class="right-button" (click)="onCancel()">Cancel</button>
+      <button mat-raised-button color="primary" class="right-button" (click)="onSubmit()">Create</button>
+    </div> -->
+
+    <mat-dialog-content>
+
+      <div class="fixed-button-group">
+        <button mat-button (click)="exportToWord()" class="export-btn">Export to Word</button>
+  
+        <button mat-icon-button (click)="toggleHTMLMode()" class="right-button1" >
+          <mat-icon>{{ htmlMode ? 'edit'  : 'code'}}</mat-icon> <!-- Change icon based on htmlMode -->
+        </button>
+        <button (click)="openEmailDialog()"  class="send-email-btn">
+          <mat-icon>email</mat-icon>  <!-- You can use an Angular Material icon here -->
+        </button>
+        <button mat-icon-button (click)="insertHorizontalRule()" matTooltip="Insert Horizontal Line">
+          <mat-icon>horizontal_rule</mat-icon>
+        </button>
+        <button mat-icon-button (click)="insertTable()" id="insert-table-button" matTooltip="Insert Table">
+          <mat-icon>grid_on</mat-icon>
+        </button>
+      </div>
+      <!-- Quill Editor Container -->
+      <div class="dropdown-container">
+        <!-- Dropdown for Predefined Text Snippets -->
+        <mat-form-field appearance="fill" style="width: 100%;">
+          <mat-label>Please select a Compliance Course/Certification</mat-label>
+          <mat-select [(value)]="selectedText" (selectionChange)="onSnippetSelect($event)">
+              <mat-option *ngFor="let snippet of textSnippets" [value]="snippet" matTooltip="{{'<employeeList1>'}}" matTooltipPosition="above">
+                  {{ snippet }}
+              </mat-option>
+          </mat-select>
+      </mat-form-field>
+  
+      <!-- Drag-and-drop text container that updates based on selected snippet -->
+      <div *ngIf="selectedText" class="draggable-text" 
+           [draggable]="true" (dragstart)="onDragStart($event, selectedText)">
+          {{ selectedText }}
+      </div>
+    </div>
+      <div #editorContainer id="editor" 
+      style="height: 700px; width: 100%;" 
+      (drop)="onDrop($event)" 
+      (dragover)="onDragOver($event)">
+  </div> 
+  
+  </mat-dialog-content>
+    
+    <mat-dialog-actions>
+      <button mat-button class="right-button" (click)="cancel()">Cancel</button>
+      <button mat-button class="right-button" color="primary" (click)="saveChanges()">Save</button>
+    </mat-dialog-actions>
+    
+    
+  

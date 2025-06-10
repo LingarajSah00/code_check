@@ -1,0 +1,163 @@
+<h3>Employee Compliance</h3>
+
+<div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 1rem;">
+    <!-- First Text Box -->
+    <mat-form-field appearance="fill">
+      <mat-label>Enter Course ID</mat-label>
+      <input matInput  placeholder="Enter Course ID" />
+    </mat-form-field>
+  
+    <p>and/or</p>
+  
+    <!-- Second Text Box -->
+    <mat-form-field appearance="fill">
+      <mat-label>Enter Colleague ID</mat-label>
+      <input matInput placeholder="Enter Colleague ID" />
+    </mat-form-field>
+    <p>and/or</p>
+  
+    <!-- Date Picker -->
+    <mat-form-field appearance="fill">
+      <mat-label>Due Date From</mat-label>
+      <input matInput [matDatepicker]="picker" placeholder="Pick a date" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+     <!-- Date Picker -->
+     <mat-form-field appearance="fill">
+        <mat-label>Due Date To</mat-label>
+        <input matInput [matDatepicker]="picker1" placeholder="Pick a date" />
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+
+      <!-- Dropdown -->
+<mat-form-field appearance="fill">
+    <mat-label>Status</mat-label>
+    <mat-select >
+      <mat-option value="">All</mat-option>
+      <mat-option value="To Compliance Annual Due">To Compliance Annual Due</mat-option>
+      <mat-option value="Completed">Completed</mat-option>
+      <!-- Add more options as needed -->
+    </mat-select>
+  </mat-form-field>
+  
+  <mat-form-field appearance="fill">
+    <mat-label>Completed ?</mat-label>
+    <mat-select >
+      <mat-option value="InProgress">To Compliance Annual Due</mat-option>
+      <mat-option value="Completed">Completed</mat-option>
+      <!-- Add more options as needed -->
+    </mat-select>
+  </mat-form-field>
+    <!-- Search Button -->
+    <button mat-icon-button color="primary"  matTooltip="Search">
+      <mat-icon>search</mat-icon>
+    </button>
+    <div class="button-row">
+
+    <button mat-raised-button class="download-btn" (click)="openDownloadDialog()" ><mat-icon>file_download</mat-icon></button>
+    <!-- <button mat-raised-button color="warn" *ngIf="canCreateUser()" class="create-button" >Create</button> -->
+</div>
+
+  </div>
+  
+  
+  <div class="mat-elevation-z8">
+      <!-- Search Box -->
+      <!-- <button mat-raised-button class="download-btn" (click)="openDownloadDialog()" ><mat-icon>file_download</mat-icon></button> -->
+  
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>Search</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search by Name or Email" />
+      </mat-form-field>
+     -->
+        <!-- Create Button at the top -->
+        <!-- <button mat-raised-button color="warn" *ngIf="canCreateUser()" class="create-button" >Create</button> -->
+    
+      <!-- Table -->
+      <table mat-table [dataSource]="dataSource">
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> Emp ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+    
+        <!-- Email Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> CourseID </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+    
+        <!-- Status Column -->
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Course </th>
+          <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="assignType">
+          <th mat-header-cell *matHeaderCellDef> Assign Type </th>
+          <td mat-cell *matCellDef="let element"> {{element.assignType}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="dateNeeded">
+          <th mat-header-cell *matHeaderCellDef> Date Needed </th>
+          <td mat-cell *matCellDef="let element"> {{element.dateNeeded}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="dateCompleted">
+          <th mat-header-cell *matHeaderCellDef> Date Completed </th>
+          <td mat-cell *matCellDef="let element"> {{element.dateCompleted}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="escalationDate">
+          <th mat-header-cell *matHeaderCellDef> Escalation Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.escalationDate}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="week">
+          <th mat-header-cell *matHeaderCellDef> Week </th>
+          <td mat-cell *matCellDef="let element"> {{element.week}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="sendStatus">
+          <th mat-header-cell *matHeaderCellDef> SendStatus </th>
+          <td mat-cell *matCellDef="let element"> {{element.sendStatus}} </td>
+        </ng-container>
+  
+  
+        <ng-container matColumnDef="template">
+          <th mat-header-cell *matHeaderCellDef> Template </th>
+          <td mat-cell *matCellDef="let element"> {{element.template}} </td>
+        </ng-container>
+  
+        <!-- Action Column (Create and Edit Buttons) -->
+      <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef> Actions </th>
+          <td mat-cell *matCellDef="let element">
+            <mat-icon *ngIf="canEditUser()" class="edit-icon" matTooltip="edit" matTooltipPosition="above" matTooltipShowDelay="500">edit</mat-icon>
+  
+          </td>
+        </ng-container>
+  
+  
+        <!-- Header and Row definitions -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    
+      <!-- Pagination Controls -->
+      <mat-paginator [length]="dataSource.data.length"
+                     [pageSize]="10"
+                     [pageSizeOptions]="[10, 20,30]"
+                     showFirstLastButtons>
+      </mat-paginator>
+    </div>
+    

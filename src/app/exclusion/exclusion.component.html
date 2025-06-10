@@ -1,0 +1,120 @@
+<h3>Exclusions</h3>
+<!-- Create Button and Dropdown -->
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 10px;">
+  <mat-form-field appearance="fill">
+    <mat-label>Select Type</mat-label>
+    <mat-select [(value)]="selectedOption">
+      <mat-option value="option1">By Employee</mat-option>
+      <mat-option value="option2">By Location</mat-option>
+      <mat-option value="option3">By Leader</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Search</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search by Name or Email" />
+  </mat-form-field>
+
+  <button mat-raised-button color="warn" *ngIf="canCreateUser()" class="create-button" (click)="openCreateMaintenanceDialog()"(click)="openSearchDialog()">Create</button>
+  <button mat-raised-button class="download-btn" *ngIf="canDeleteUser()" (click)="openDownloadDialog()" ><mat-icon>file_download</mat-icon></button>
+
+</div>
+
+<!-- Table 1 (By Employee) -->
+<div *ngIf="selectedOption === 'option1'">
+    <table mat-table [dataSource]="dataSource1" matSort>
+      <!-- Columns go here -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="fullName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.fullName}} </td>
+      </ng-container>
+  
+      <!-- Other columns go here -->
+  
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-icon class="edit-icon" *ngIf="canEditUser()" (click)="openEditUserDialog(element)" matTooltip="edit" matTooltipPosition="above" matTooltipShowDelay="500">edit</mat-icon>
+          <mat-icon class="delete-icon" *ngIf="canDeleteUser()"(click)="deleteRecord(element)" matTooltip="delete" matTooltipPosition="above" matTooltipShowDelay="500">delete</mat-icon>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [length]="dataSource1.data.length" [pageSize]="10" [pageSizeOptions]="[10, 20,30]" showFirstLastButtons (page)="onPageChange($event, 1)">
+    </mat-paginator>
+  </div>
+  
+  <!-- Table 2 (By Location) -->
+  <div *ngIf="selectedOption === 'option2'">
+    <table mat-table [dataSource]="dataSource2" matSort>
+      <!-- Same table structure -->
+        <!-- Columns go here -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="fullName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.fullName}} </td>
+      </ng-container>
+  
+      <!-- Other columns go here -->
+  
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-icon class="edit-icon" *ngIf="canEditUser()"  (click)="openEditUserDialog(element)" matTooltip="edit" matTooltipPosition="above" matTooltipShowDelay="500"><mat-icon>edit</mat-icon>
+          </mat-icon>
+          <mat-icon class="delete-icon" *ngIf="canDeleteUser()"(click)="deleteRecord(element)" matTooltip="delete" matTooltipPosition="above" matTooltipShowDelay="500"><mat-icon>delete</mat-icon>
+          </mat-icon>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [length]="dataSource2.data.length" [pageSize]="10" [pageSizeOptions]="[10, 20,30]" showFirstLastButtons (page)="onPageChange($event, 2)">
+    </mat-paginator>
+  </div>
+  
+  <!-- Table 3 (By Leader) -->
+  <div *ngIf="selectedOption === 'option3'">
+    <table mat-table [dataSource]="dataSource3" matSort>
+      <!-- Same table structure -->
+        <!-- Columns go here -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="fullName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.fullName}} </td>
+      </ng-container>
+  
+      <!-- Other columns go here -->
+  
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-icon class="edit-icon" *ngIf="canEditUser()" (click)="openEditUserDialog(element)" matTooltip="edit" matTooltipPosition="above" matTooltipShowDelay="500">edit</mat-icon>
+          <mat-icon class="delete-icon" *ngIf="canDeleteUser()" (click)="deleteRecord(element)" matTooltip="delete" matTooltipPosition="above" matTooltipShowDelay="500">delete</mat-icon>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [length]="dataSource3.data.length" [pageSize]="10" [pageSizeOptions]="[10, 20,30]" showFirstLastButtons (page)="onPageChange($event, 3)">
+    </mat-paginator>
+  </div>
+  
+

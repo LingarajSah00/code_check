@@ -1,0 +1,273 @@
+/* dashboard.component.css */
+
+/* Sidebar container */
+.sidenav-container {
+    display: flex;
+    height: 100vh;  /* Full screen height */
+  }
+  
+  /* Sidebar style (mat-sidenav) */
+  mat-sidenav {
+    background-color: #f44336; /* Red background for the sidenav */
+    color: white;  /* White text color */
+    padding: 20px;
+    transition: all 0.3s ease;  /* Smooth transition for expanding/collapsing */
+  }
+  
+  /* Sidebar header (mat-toolbar) */
+  .sidenav-header {
+    background-color: #d32f2f; /* Dark red background for toolbar */
+    color: white;  /* White text */
+    font-weight: bold;
+    font-size: 14px;  /* Adjust size if needed */
+    padding: 10px 16px;  /* Add padding to avoid text touching edges */
+    text-overflow: ellipsis;  /* Add ellipsis if text overflows */
+    white-space: nowrap;  /* Prevent text from wrapping */
+    overflow: hidden;  /* Hide overflow */
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Sidebar links (mat-nav-list items) */
+  .sidenav a {
+    color: white;  /* White text for the links */
+    text-decoration: none;
+    display: flex;
+    align-items: center;  /* Align icon and text horizontally */
+    padding: 10px;
+    flex-direction: row-reverse;  /* Align icons to the left */
+    transition: background-color 0.3s ease, color 0.3s ease;  /* Smooth transition for hover and color change */
+    border-radius: 4px;  /* Rounded corners for uniform look */
+  }
+  
+  /* Sidebar link icon styling */
+  .sidenav a mat-icon {
+    margin-left: 10px;  /* Space between icon and text */
+    color: white;  /* White icon color */
+    order: -1;  /* Moves the icon to the left */
+    font-size: 24px;  /* Set the size of the icon (default size) */
+  }
+  
+  /* Active link style */
+  a.active {
+    font-weight: bold;
+    color: #ffffff;  /* Keep text color white for active link */
+    background-color: #d32f2f;  /* Red background for active link */
+  }
+  
+  /* Hover effect for sidebar links */
+  .sidenav a:hover {
+    background-color: rgba(255, 255, 255, 0.15); /* Uniform subtle light red for hover */
+    color: #ffffff;  /* Keep the color white for text */
+  }
+  
+  /* Hover effect for active links to prevent color change */
+  .sidenav a.active:hover {
+    background-color: #d32f2f; /* Keep active color when hovered */
+  }
+  
+  /* Content area */
+  mat-sidenav-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #faf9fd;  /* Light red background for content area */
+    transition: padding 0.3s ease;  /* Smooth transition on mobile collapse */
+  }
+  
+  @media (max-width: 768px) {
+    .mobile-menu-button {
+      display: block;  /* Show the menu button on small screens */
+    }
+    .title {
+      display: none;  /* Optionally hide the title on small screens */
+    }
+  }
+  
+    mat-sidenav.opened {
+      display: block;  /* Show sidebar if opened */
+    }
+  
+    /* Adjust content area padding for mobile */
+    mat-sidenav-content {
+      padding-left: 10px;  /* Less padding for mobile */
+      padding-right: 10px;  /* Ensure content fits nicely on mobile */
+      background-color: white;  /* Changed background to white */
+    }
+  
+  
+/* Dashboard Container */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;  /* Stack the cards vertically */
+  margin-top: 20px;
+}
+
+/* Full-width mat-card (First card) */
+.dashboard-card:first-child {
+  width: 100%;  /* First card takes up full width */
+  padding: 20px;
+  margin-bottom: 20px;  /* Add some margin below it */
+}
+
+/* Container for the second and third cards side by side */
+.dashboard-row {
+  display: flex;  /* Display the cards side by side */
+  justify-content: flex-start;  /* Align the cards to the start of the container */
+  width: 100%;  /* Ensure the container takes up full width */
+  gap: 20px;  /* Space between the two cards */
+}
+
+/* 50% Width for the second and third cards */
+.dashboard-card:nth-child(2), .dashboard-card:nth-child(3) {
+  flex: 0 0 calc(50% - 10px);  /* Set both cards to 50% of the container width minus half of the gap */
+  padding: 20px;
+  margin-bottom: 0;  /* Remove bottom margin between the second and third card */
+}
+
+
+/* To handle responsive design and stack the second and third cards below the first on smaller screens */
+@media (max-width: 768px) {
+  .dashboard-card {
+    width: 100%;  /* Stack all cards vertically on smaller screens */
+  }
+
+  /* Make second and third cards stack on smaller screens */
+  .dashboard-row {
+    flex-direction: column;
+  }
+}
+
+  
+  canvas {
+    width: 100% !important;  /* Ensure the canvas takes up the full width of the parent container */
+    height: 400px !important;  /* Ensure the height is set */
+    border: 1px solid #ddd;  /* Add a border to the canvas */
+  }
+  
+  mat-card-header {
+    text-align: center;
+    background-color: #f5f5f5;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left; /* Ensure text aligns to the left */
+    flex: 0; /* Prevent title from taking up remaining space */
+  }
+  mat-toolbar {
+    display: flex;
+  justify-content: flex-start;  /* Align all items to the left */
+  align-items: center;          /* Vertically center the items */
+  }
+  
+  .spacer {
+    flex: 1;  /* This will take up all the available space and push the buttons to the right */
+  }
+  
+  .right-button {
+    margin-left: 10px;  /* Optional: Adds some space between the buttons */
+  }
+
+
+   
+  
+
+
+  .sidenav a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Sidebar link icon styling */
+  .sidenav a mat-icon {
+    margin-right: 10px;  /* Space between icon and text */
+    color: white;
+    font-size: 24px;
+  }
+
+  /* Ensure the expansion panel's icon is on the left */
+mat-expansion-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #c62828; 
+}
+
+/* Override the default flex layout of mat-expansion-panel-header */
+mat-expansion-panel-header mat-icon {
+  margin-right: 10px; /* Space between icon and title */
+  order: -1; /* Move the icon to the left */
+}
+
+/* Adjust the dropdown arrow (the expand/collapse icon) position */
+mat-expansion-panel-header .mat-expansion-indicator {
+  order: 1; /* Ensure dropdown arrow stays on the right */
+}
+
+/* Custom table styles */
+table {
+  width: 100%; /* Ensure the table fills the container */
+  margin-bottom: 20px; /* Add space below the table */
+}
+
+.mat-header-cell, .mat-cell {
+  text-align: center;
+}
+
+.mat-header-row {
+  background-color: #f5f5f5; /* Light grey background for header */
+}
+
+ /* Style the text under the card title */
+.overview-text {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  text-align: left;  /* Align the text to the left */
+}
+/* Style the date */
+.today-date {
+  font-size: 16px;
+  color: #666;
+  margin-top: 5px;
+  text-align: left;  /* Align the text to the left */
+  font-weight: normal;
+}
+.status-green {
+  color: green;
+  font-weight: bold;
+}
+
+.status-red {
+  color: #cc0000;
+  font-weight: bold;
+}
+/* Container for the icon and text in the table cell */
+.status-container {
+  display: flex;               /* Use flexbox to arrange icon and text in a row */
+  align-items: center;         /* Align icon and text vertically in the center */
+  justify-content: flex-start; /* Align them to the left */
+}
+
+/* Adjust the icon size and space between the icon and the text */
+.status-container mat-icon {
+  margin-right: 8px;  /* Space between icon and text */
+  font-size: 20px;    /* Set a consistent icon size */
+  color: inherit;     /* Inherit the color from the surrounding text */
+}
+
+/* Adjust the text size to match icon size */
+.status-container .campaign-text {
+  font-size: 16px;    /* Adjust text size */
+  color: #333;        /* Default text color */
+  white-space: nowrap;/* Prevent text from wrapping to the next line */
+}

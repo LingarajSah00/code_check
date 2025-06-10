@@ -1,0 +1,56 @@
+/* Confirmation Dialog Header */
+.confirmation-dialog-title {
+  background-color: #d32f2f; /* Red background */
+  color: white; /* White text */
+  padding: 16px; /* Adjust padding for a nicer look */
+  font-weight: bold; /* Bold text */
+  text-align: center; /* Center align text */
+  border-radius: 4px 4px 0 0; /* Rounded top corners */
+}
+
+/* Image styling */
+.confirmation-icon {
+  display: block;
+  margin: 0 auto 10px auto; /* Center the image and add some space below it */
+  width: 100px; /* Adjust the image width */
+  height: 50px; /* Adjust the image height */
+}
+
+/* Styling for the dialog content (center the content dynamically) */
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertical centering */
+  align-items: center; /* Horizontal centering */
+  text-align: center; /* Center the text */
+  padding: 16px; /* Padding inside the dialog for better spacing */
+  min-height: 100px; /* Ensure the content area is at least this tall */
+}
+
+/* Styling for Yes/No buttons */
+.dialog-button {
+  color: #d32f2f; /* Red color for the text */
+  border: 1px solid #d32f2f; /* Border color to match red */
+  background-color: transparent; /* Transparent background for normal state */
+  padding: 10px 20px; /* Adding padding for better button size */
+  border-radius: 4px; /* Rounded corners for a smoother look */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition on hover */
+  margin: 0 10px; /* Adds space between the buttons */
+  outline: none; /* Remove default outline */
+}
+
+.dialog-button:hover {
+  background-color: #d32f2f; /* Red background on hover */
+  color: white; /* White text on hover */
+}
+
+.dialog-button:focus {
+  outline: 2px solid #d32f2f; /* Red outline for focus (better accessibility) */
+}
+
+/* Styling for dialog message */
+.text1 {
+  color: black; /* Default text color */
+  font-size: 16px; /* Adjust the font size for readability */
+  margin-top: 10px; /* Add space between image and message */
+}

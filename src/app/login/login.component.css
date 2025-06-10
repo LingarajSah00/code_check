@@ -1,0 +1,151 @@
+/* Header Style */
+.header {
+  display: flex;
+  align-items: center;  /* Align items vertically */
+  background-color: #f5f5f5;
+  color: #001b3f;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: normal;
+  box-shadow: 0 2px 12px #dae2f9;
+  margin-bottom: 20px;
+}
+
+/* Style for the left image in the header */
+.welcome-image-left {
+  width: 80px;  /* Adjust size to your preference */
+  height: auto;  /* Maintain aspect ratio */
+  margin-right: 16px;  /* Space between image and text */
+}
+
+/* Header text */
+.header h2 {
+  margin: 10px;
+  font-weight: lighter;
+  font-size: xx-large;
+  color: #808080;
+
+font-size: 25px;
+}
+
+/* Main login container */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: calc(100vh - 80px);  /* Full viewport height minus the header height */
+  padding: 20px;
+}
+
+/* Login box styling */
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Welcome image inside the login box */
+.welcome-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* SSO button styling */
+.blue-sso-btn {
+  background-color: #42A5F5;
+  color: white;
+  font-weight: bold;
+  height: 35px;
+  border: none;
+  height: 45px;  /* Matching the standard height for buttons */
+  width: 100%;   /* Let it fill available space like the other buttons */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);  /* Light shadow for depth */
+  cursor: pointer;
+  text-transform: uppercase;  /* Optional: Uppercase text for uniformity */
+
+}
+
+
+.mat-mdc-raised-button:not(:disabled) {
+  background-color: #42A5F5;
+}
+
+/* Alert Box Styling */
+.alert-box {
+  padding: 16px 24px;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  max-width: 80%;
+  width: 500px;
+  margin: 20px auto; /* Centered and some spacing from other elements */
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease-out;
+}
+
+
+/* Color-coding for alert box */
+.alert-box.error {
+  background-color: #cc0000;  /* Red */
+}
+
+.alert-box.success {
+  background-color: #4caf50;  /* Green */
+}
+
+.alert-box.info {
+  background-color: #2196f3;  /* Blue */
+}
+
+.alert-box.warning {
+  background-color: #ff9800;  /* Orange */
+}
+
+/* Alert icon */
+.alert-icon {
+  margin-right: 12px;
+  font-size: 24px;
+}
+.welcome1{
+  height: 50px;
+  font-weight: lighter;
+}
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .header {
+      font-size: 14px;
+  }
+
+  .login-box {
+      max-width: 90%;
+  }
+
+  .welcome-image {
+      max-width: 150px;
+  }
+
+  .alert-box {
+      max-width: 90%;
+  }
+  
+}

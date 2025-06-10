@@ -1,0 +1,79 @@
+/* Main form container */
+.mat-elevation-z8 {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    /* Set a fixed max height for the form */
+    max-height: 500px; /* Adjust this value as needed */
+    overflow-y: auto; /* Enable scrolling if the form content exceeds max-height */
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Ensure the input fields have full width */
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* Align the buttons to the right */
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  /* Style for the buttons */
+  .right-button {
+    background-color: #cc0000;
+    color: white;
+    padding: 10px 20px;
+    margin: 0;
+    width: auto;
+  }
+  
+  .right-button:hover {
+    background-color: darkred;
+    color: white;
+  }
+  
+  /* Style for the submit button */
+  .mat-raised-button {
+    padding: 10px 20px;
+  }
+  
+  /* Make form input fields and labels uniform */
+  mat-form-field mat-label {
+    font-size: 14px;
+  }
+  
+  mat-form-field input {
+    font-size: 16px;
+  }
+  
+  /* Add some padding to the form container */
+  form {
+    padding-right: 10px;
+  }
+  
+  /* Center form inside the dialog */
+  .mat-dialog-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .right-button1 {
+    background-color: #cc0000; /* Red background */
+    color: white; /* Black text */
+  }
+  
+  .right-button1:hover {
+    background-color: darkred; /* Darker shade when hovering */
+    color: white; /* White text on hover */
+  }

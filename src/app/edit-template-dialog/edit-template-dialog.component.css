@@ -1,0 +1,290 @@
+mat-form-field {
+    width: 100%;
+  }
+  
+  quill-editor {
+    height: 700px; /* Adjust height as needed */
+  }
+  /* edit-template-dialog.component.css */
+angular-editor {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  .right-button {
+    background-color: #cc0000; /* Red background */
+    color: white; /* Black text */
+  }
+  
+  .right-button1 {
+    border-radius: 5px;
+    
+
+  }
+  .right-button:hover {
+    background-color: darkred; /* Darker shade when hovering */
+    color: white; /* White text on hover */
+  }
+
+  ::ng-deep .mat-dialog-container {
+    width: 90%; /* Set to 90% of the screen width or a custom value */
+    max-width: 1000px; /* Max width of the dialog */
+    height: auto; /* Let the height adjust automatically */
+    max-height: 80vh; /* Max height to ensure it doesn't take up too much vertical space */
+    padding: 20px; /* Add some padding for a more spacious look */
+    box-sizing: border-box; /* Ensure padding doesn't affect the total width */
+  }
+  #editor {
+    height: 300px; /* Adjust this based on your needs */
+  }
+  .cdk-overlay-pane mat-mdc-dialog-panel{
+    width: 609px;
+    position: static;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  .ql-toolbar {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .ql-toolbar select {
+    margin-left: 10px;
+    padding: 5px;
+  }
+
+  .editor-container {
+    height: 700px; /* Maintain your custom height */
+    width: 100%;   /* Set width to 100% */
+    max-width: 1200px;  /* Limit width to 1200px */
+
+  }
+
+  .mat-dialog-container {
+    width: 900px !important;  /* Make sure the dialog container width is fixed */
+    height: 700px !important;  /* Same for height */
+  }
+  
+  #ckeditor {
+    width: 100% !important;  /* Ensure the editor stretches to fill the dialog */
+    height: 100% !important; /* Make the editor fill the container */
+  }
+  
+  /* Quill Editor Styling */
+/* Quill Editor Styling */
+#editor {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 400px;
+  background-color: #fff;
+}
+
+/* Flexbox container for the dropdown and draggable text */
+.dropdown-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;  /* Align elements to the start of the container */
+  margin-bottom: 20px;  /* Add some space below the elements */
+}
+
+/* Dropdown Styling */
+mat-form-field {
+  width: 45%;  /* Set the dropdown width to 45% of the parent container */
+}
+
+/* Draggable Text Styling */
+.draggable-text-container {
+  width: 45%;  /* Set the container for draggable text to 45% of the parent */
+  max-height: 300px;  /* Limit the height for better control */
+  overflow-y: auto;  /* Allow scrolling if content exceeds height */
+}
+/* Styling for draggable text */
+.draggable-text {
+  cursor: grab;
+  padding: 10px;
+  background-color: #f1f1f1;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  display: inline-block;
+  max-width: 300px;
+}
+
+/* Optional: Apply hover effect to make the text visually interactive */
+.draggable-text:hover {
+  background-color: #e0e0e0;
+}
+.ql-html {
+  margin-left: 10px;  /* Adds some space between buttons */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Styles */
+/* Styles */
+::ng-deep .dynamic-tooltip {
+  white-space: normal;           /* Allow wrapping of text */
+  max-width: 500px;              /* You can adjust this to your needs */
+  width: auto !important;        /* Allow the tooltip to expand based on content */
+  word-wrap: break-word;         /* Ensure long words are broken and do not overflow */
+  padding: 10px;                 /* Optional: padding for a better look */
+  min-width: 200px;              /* Optional: Ensure the tooltip has a minimum width */
+  box-sizing: border-box;        /* Ensure padding is included in the element's width */
+}
+
+::ng-deep .dynamic-tooltip {
+  position: absolute !important;  /* Allow absolute positioning */
+  z-index: 1000 !important;       /* Ensure it stays on top of other elements */
+}
+
+.editor-footer {
+  position: absolute; /* Fix the button on the screen */
+  top: 14px; /* Adjust the distance from the top of the screen */
+  right: 12px; /* Place it on the right side */
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 9999; /* Ensure it's above other elements */
+}
+/* Customize the appearance of the toolbar buttons */
+.ql-power, .ql-help {
+  border: none;
+  background: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.ql-power:hover, .ql-help:hover {
+  background-color: #f0f0f0;  /* Light background on hover */
+}
+/* Custom size definitions */
+.ql-size-12px {
+  font-size: 12px;
+}
+
+.ql-size-14px {
+  font-size: 14px;
+}
+
+.ql-size-16px {
+  font-size: 16px;
+}
+
+.ql-size-18px {
+  font-size: 18px;
+}
+
+.ql-size-20px {
+  font-size: 20px;
+}
+
+.ql-size-24px {
+  font-size: 24px;
+}
+
+.ql-size-32px {
+  font-size: 32px;
+}
+
+.html-mode {
+  background-color: black !important; /* Full background black */
+  color: white !important;            /* Text color white */
+  border: none !important;            /* Remove any borders */
+  height: 100vh;                      /* Make sure the container takes the full screen height */
+  width: 100%;                        /* Make sure the container takes full screen width */
+}
+
+/* Optional: If you want to adjust the editor text area to also have a black background in HTML mode */
+#html-editor {
+  background-color: black !important; /* Text area black background */
+  color: white !important;            /* Text color white */
+  border: none !important;            /* No border */
+  width: 100%;                        /* Full width of the parent container */
+  height: 100%;                       /* Full height of the parent container */
+  resize: none;                       /* Disable resize */
+}
+.left-align-btn {
+  text-align: left;
+  display: block;
+  margin: 0;
+}
+.button-group-fixed {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 12px; /* spacing between buttons */
+  z-index: 9999;
+}
+
+/* Export button (Word) */
+.export-btn {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #cc0000;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  min-width: 140px;
+  height: 40px;
+}
+
+.export-btn:hover {
+  background-color: #303f9f;
+}
+
+/* Icon buttons - HTML toggle & Email */
+.right-button1, .send-email-btn {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+.right-button1:hover, .send-email-btn:hover {
+  background-color: #e0e0e0;
+}
+.ql-editor hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 1.5em 0;
+}
+hr.custom-hr {
+  border: none;
+  border-top: 2px solid #888;  /* Make the line visible */
+  margin: 16px 0;
+}
+.ql-toolbar button {
+  pointer-events: auto !important;
+  overflow: visible !important;
+}

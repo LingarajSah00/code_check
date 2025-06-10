@@ -1,0 +1,13 @@
+<h2 mat-dialog-title class="confirmation-dialog-title">Please Confirm</h2>
+
+<mat-dialog-content>
+  <!-- Image before the confirmation message -->
+  <!-- <img src="assets/wel1.png" alt="Confirmation" class="confirmation-icon"> -->
+
+  <p>{{ message }}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button class="dialog-button" (click)="onNoClick()">No</button>
+  <button mat-button class="dialog-button" (click)="onYesClick()">Yes</button>
+</mat-dialog-actions>

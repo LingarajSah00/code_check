@@ -1,0 +1,15 @@
+.confirmation-icon {
+    display: block;
+    margin: 0 auto 10px auto; /* Center the image and add some space below it */
+    width: 100px; /* Adjust the image width */
+    height: 50px; /* Adjust the image height */
+  }
+  .right-button {
+    background-color: #cc0000; /* Red background */
+    color: white; /* Black text */
+  }
+  
+  .right-button:hover {
+    background-color: darkred; /* Darker shade when hovering */
+    color: white; /* White text on hover */
+  }

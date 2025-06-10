@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Edit Campaigns Status</h2>
+<mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Status</mat-label>
+    <mat-select [(value)]="selectedStatus">
+      <mat-option *ngFor="let status of statuses" [value]="status">
+        {{ status }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button class="right-button" (click)="onCancel()">Cancel</button>
+  <button mat-button class="right-button" color="primary" (click)="onConfirm()">Confirm</button>
+</mat-dialog-actions>

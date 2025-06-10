@@ -1,0 +1,168 @@
+mat-form-field {
+    width: 100%;
+  }
+  
+  quill-editor {
+    height: 700px; /* Adjust height as needed */
+  }
+  /* edit-template-dialog.component.css */
+angular-editor {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  .right-button {
+    background-color: #cc0000; /* Red background */
+    color: white; /* Black text */
+  }
+  
+  .right-button:hover {
+    background-color: darkred; /* Darker shade when hovering */
+    color: white; /* White text on hover */
+  }
+
+  ::ng-deep .mat-dialog-container {
+    width: 90%; /* Set to 90% of the screen width or a custom value */
+    max-width: 1000px; /* Max width of the dialog */
+    height: auto; /* Let the height adjust automatically */
+    max-height: 80vh; /* Max height to ensure it doesn't take up too much vertical space */
+    padding: 20px; /* Add some padding for a more spacious look */
+    box-sizing: border-box; /* Ensure padding doesn't affect the total width */
+  }
+  #editor {
+    height: 300px; /* Adjust this based on your needs */
+  }
+  .cdk-overlay-pane mat-mdc-dialog-panel{
+    width: 609px;
+    position: static;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  .ql-toolbar {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .ql-toolbar select {
+    margin-left: 10px;
+    padding: 5px;
+  }
+
+  .editor-container {
+    height: 700px; /* Maintain your custom height */
+    width: 100%;   /* Set width to 100% */
+    max-width: 1200px;  /* Limit width to 1200px */
+
+  }
+
+  .mat-dialog-container {
+    width: 900px !important;  /* Make sure the dialog container width is fixed */
+    height: 700px !important;  /* Same for height */
+  }
+  
+  #editor {
+    width: 100% !important;  /* Ensure the editor stretches to fill the dialog */
+    height: 100% !important; /* Make the editor fill the container */
+  }
+  
+  /* Quill Editor Styling */
+/* Quill Editor Styling */
+#editor {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 400px;
+  background-color: #fff;
+}
+
+/* Flexbox container for the dropdown and draggable text */
+.dropdown-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;  /* Align elements to the start of the container */
+  margin-bottom: 20px;  /* Add some space below the elements */
+}
+
+/* Dropdown Styling */
+mat-form-field {
+  width: 45%;  /* Set the dropdown width to 45% of the parent container */
+}
+
+/* Draggable Text Styling */
+.draggable-text-container {
+  width: 45%;  /* Set the container for draggable text to 45% of the parent */
+  max-height: 300px;  /* Limit the height for better control */
+  overflow-y: auto;  /* Allow scrolling if content exceeds height */
+}
+/* Styling for draggable text */
+.draggable-text {
+  cursor: grab;
+  padding: 10px;
+  background-color: #f1f1f1;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  display: inline-block;
+  max-width: 300px;
+}
+
+/* Optional: Apply hover effect to make the text visually interactive */
+.draggable-text:hover {
+  background-color: #e0e0e0;
+}
+
+.export-btn {
+  position: absolute; /* Fix the button on the screen */
+  top: 20px; /* Adjust the distance from the top of the screen */
+  right: 85px; /* Place it on the right side */
+  background-color: #cc0000;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 9999; /* Ensure it's above other elements */
+}
+
+.export-btn:hover {
+  background-color: #303f9f; /* Change color on hover */
+}
+
+.text-container {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+  }
+  
+  .edit-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  mat-icon {
+    cursor: pointer;
+  }
+  
+  input {
+    font-size: 16px;
+    padding: 5px;
+    width: 200px;
+  }
+  
+  button {
+    padding: 5px 10px;
+  }

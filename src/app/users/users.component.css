@@ -1,0 +1,109 @@
+.create-button {
+    margin-bottom: 20px;  /* Space between button and table */
+    margin-right: 10px;   /* Space on the right */
+  }
+  .mat-elevation-z8 {
+    position: relative; /* Ensures the button is positioned relative to this container */
+  }
+  
+  .create-button {
+    position: absolute;
+    top: 10px;    /* Distance from the top of the container */
+    right: 85px;  /* Distance from the right of the container */
+    z-index: 10;  /* Ensure it stays above other elements */
+  }
+  .create-button {
+    background-color: #cc0000; /* Red background */
+    color: white; /* Black text */
+  }
+  
+  .create-button:hover {
+    background-color: darkred; /* Darker shade when hovering */
+    color: white; /* White text on hover */
+  }
+
+  .edit-button {
+    background-color: #cc0000; /* Red background */
+    color: white; /* Black text */
+  }
+  
+  .edit-button:hover {
+    background-color: darkred; /* Darker shade when hovering */
+    color: white; /* White text on hover */
+  }
+
+  ::ng-deep .mat-form-field .mat-input-element {
+    color: red !important; /* Set the text color to red */
+    border-bottom: 2px solid red !important; /* Set the underline color to red */
+  }
+  
+  ::ng-deep .mat-form-field .mat-label {
+    color: red !important; /* Red label */
+  }
+  
+  ::ng-deep .mat-form-field.mat-focused .mat-label {
+    color: darkred !important; /* Dark red label when focused */
+  }
+  
+  ::ng-deep .mat-form-field.mat-focused .mat-input-element {
+    border-bottom: 2px solid darkred !important; /* Dark red underline when focused */
+  }
+ 
+  .rounded-button {
+    border-radius: 50% !important;  /* Forces the button to be round */
+    width: 40px; /* Optional: set a specific size */
+    height: 40px; /* Optional: set a specific size */
+    padding: 0; /* Optional: removes any padding to ensure it's perfectly round */
+    background-color: #d32f2f; /* Optional: background color */
+  }
+  
+  .rounded-button mat-icon {
+    color: white; /* Optional: Set icon color */
+  }
+   /* Download CSV button */
+.download-btn {
+  background-color: #cc0000; /* Red background */
+  color: white; /* White text */
+ 
+}
+
+.download-btn {
+  position: absolute;
+  top: 10px;    /* Distance from the top of the container */
+  right: 10px;  /* Distance from the right of the container */
+  z-index: 10;  /* Ensure it stays above other elements */
+}
+.download-btn:hover {
+  background-color: darkred; /* Darker shade when hovering */
+  color: white; /* White text on hover */
+}
+
+.edit-icon, .delete-icon {
+  cursor: pointer;
+  font-size: 24px; /* Adjust the size of the icon */
+  margin-right: 8px; /* Space between icons */
+}
+.edit-icon:hover {
+  color: green; /* Change color on hover */
+}
+.delete-icon:hover {
+  color: red; /* Change color on hover */
+}
+
+.edit-icon {
+  background-color: #d3d3d3;   /* Light grey background */
+  padding: 10px;                /* Add padding around the icon */
+  display: inline-flex;         /* Ensure the icon is inline-flex to center it */
+  align-items: center;          /* Center the icon vertically */
+  justify-content: center;      /* Center the icon horizontally */
+  transition: background-color 0.3s ease;  /* Smooth transition on hover */
+}
+
+.delete-icon {
+  background-color: #d3d3d3;   /* Light grey background */
+  padding: 10px;                /* Add padding around the icon */
+  display: inline-flex;         /* Ensure the icon is inline-flex to center it */
+  align-items: center;          /* Center the icon vertically */
+  justify-content: center;      /* Center the icon horizontally */
+  transition: background-color 0.3s ease;  /* Smooth transition on hover */
+}

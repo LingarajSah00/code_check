@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>Export Data</h2>
+
+<mat-dialog-content>
+  <mat-radio-group [(ngModel)]="selectedFormat">
+    <mat-radio-button value="csv">CSV</mat-radio-button>
+    <mat-radio-button value="excel">Excel</mat-radio-button>
+  </mat-radio-group>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button class="right-button" (click)="onCancel()">Cancel</button>
+  <button mat-button class="right-button" (click)="onDownload()">Export</button>
+</mat-dialog-actions>

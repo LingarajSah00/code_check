@@ -1,0 +1,20 @@
+<h3>Promote Text to Production</h3>
+
+<div class="dialog-content">
+    <div class="left-section">
+      <h3>Development</h3>
+      <pre>{{ data.template.body }}</pre>  <!-- Display the body of the NotificationTemplate -->
+    </div>
+    <div class="right-section">
+      <h3>Currently in Production</h3>
+      <pre>{{ data.additionalData | json }}</pre>  <!-- Display the additional API response -->
+    </div>
+</div>
+
+
+<mat-dialog-actions class="footer">
+    <button mat-button class="dialog-button" (click)="onNoClick()">Cancel</button>
+    <button mat-button class="dialog-button" (click)="onYesClick()">Continue</button>
+  </mat-dialog-actions>
+  
+  

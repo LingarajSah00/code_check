@@ -1,0 +1,38 @@
+mat-dialog-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+
+  mat-icon.mat-prefix {
+    font-size: 24px;  /* Adjust the size of the icon */
+  }
+  
+  mat-icon.mat-suffix {
+    font-size: 24px;  /* Adjust the size of the icon */
+    cursor: pointer;  /* Optionally make the icon clickable */
+  }
+  mat-radio-group {
+    display: flex;
+    gap: 10px;  /* Adjust space between radio buttons */
+  }
+  
+  mat-radio-button {
+    margin-right: 15px; /* Optional: Add space between radio buttons */
+  }
+  
+  span {
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .right-button {
+    background-color: #cc0000; /* Red background */
+    color: white; /* Black text */
+  }
+  
+  .right-button:hover {
+    background-color: darkred; /* Darker shade when hovering */
+    color: white; /* White text on hover */
+  }

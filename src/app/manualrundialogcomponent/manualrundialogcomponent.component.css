@@ -1,0 +1,125 @@
+
+.row {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    border-radius: 20px;
+    bottom: 10px;
+    right: 10px;
+    gap: 10px; /* Space between buttons */
+  }
+  .edit-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 35px;
+    white-space: nowrap;
+    margin-top: 0;
+    border-radius: 20px;
+    margin-right: 67px;
+    border: none;
+    padding: 10px;
+    background-color: #40b249; /* Red background */
+    color: white; /* Black text */
+  }
+  .cancel-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 35px;
+    border: none;
+    border-radius: 20px;
+    margin-top: 0;
+    padding: 10px;
+  
+  }
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .styled-btn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px; /* Rounded button */
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    min-width: 150px;
+  }
+  
+  .form-group {
+    margin-top: 20px;
+  display: flex;
+  align-items: center; /* Aligns items vertically */
+  gap: 10px; /* Adds spacing between label and input */
+  margin-bottom: 15px; /* Adds spacing below the row */
+  }
+  
+  .input-medium {
+  width: 250px; /* Adjust width to fit well */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  }
+  
+  .run-btn {
+    background-color: green;
+    color: white;
+  }
+  
+  .styled-btn:hover {
+    opacity: 0.8;
+  }
+  
+  .form-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .full-width {
+    flex-grow: 1;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  
+  .medium-width {
+    width: 500px;
+  }
+  
+  .start-btn {
+    background-color: green;
+    color: white;
+  }
+  
+  .cancel-btn {
+    background-color: #CC0000;
+    color: white;
+  }
+  
+  mat-tab {
+    display: flex;
+    justify-content: space-between; /* Spread the child divs evenly across the row */
+    padding: 10px;
+  }
+  
+  .container {
+    display: flex; /* Align div5 and div6 side by side */
+    width: 100%;
+  }
+  
+  

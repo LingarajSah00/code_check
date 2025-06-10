@@ -1,0 +1,63 @@
+/* General styles for the dialog header */
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Adds spacing between the header and the content */
+    text-align: center; /* Center the header */
+    color: #333; /* Dark color for better visibility */
+  }
+  
+  /* Styling for dialog content (left and right sections) */
+  .dialog-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    height: 400px;  /* Adjust height based on content, or use max-height */
+  }
+  
+  .left-section,
+  .right-section {
+    width: 48%; /* Each section will take up 48% of the width, leaving a gap between them */
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Allows for scrolling if the content is too long */
+    max-height: 100%;  /* Ensures the sections don't overflow vertically */
+  }
+  
+  .left-section {
+    border-right: 2px solid #ccc; /* Optional: adds a separator between the sections */
+  }
+  
+  h3.section-header {
+    margin-top: 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  pre {
+    white-space: pre-wrap; /* Allows long lines to wrap */
+    word-wrap: break-word;  /* Breaks long words if necessary */
+    background-color: #f4f4f4;  /* Light background color for better readability */
+    padding: 10px;
+    border-radius: 4px;
+    overflow: auto;  /* Allows scrolling if the content is too long */
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  /* Button actions style */
+  mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  
+  .dialog-button {
+    margin-left: 10px; /* Adds spacing between the buttons */
+    background-color: #cc0000;
+  }
+  
+  .mat-dialog-actions button {
+    min-width: 80px; /* Ensures buttons are of consistent size */
+  }
+  

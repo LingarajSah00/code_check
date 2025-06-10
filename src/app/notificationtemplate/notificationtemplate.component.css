@@ -1,0 +1,201 @@
+table {
+    width: 100%;
+  }
+  
+  th.mat-header-cell {
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .mat-cell, .mat-header-cell {
+    padding: 10px;
+  }
+  
+  .mat-elevation-z8 {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+  
+
+ /* Style the Edit and Delete buttons */
+table td button {
+  margin-right: 5px; /* Add space between buttons */
+  padding: 5px 10px; /* Padding inside the buttons */
+  cursor: pointer; /* Add pointer cursor */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition on hover */
+  font-weight: bold; /* Optional: Make the button text bold */
+}
+
+/* Specific red color for Edit button */
+table td button.edit-btn {
+  background-color: #cc0000; /* Red background for Edit */
+  color: white; /* White text */
+  border: none; /* Remove border */
+}
+
+/* Hover effect for Edit button */
+table td button.edit-btn:hover {
+  background-color: darkred; /* Darker red on hover */
+  color: white; /* Keep text white on hover */
+}
+
+/* Specific red color for Delete button */
+table td button.delete-btn {
+  background-color: #cc0000; /* Red background for Delete */
+  color: white; /* White text */
+  border: none; /* Remove border */
+}
+
+/* Hover effect for Delete button */
+table td button.delete-btn:hover {
+  background-color: darkred; /* Darker red on hover */
+  color: white; /* Keep text white on hover */
+}
+
+/* Optional: Add custom styles for when the button is clicked (pressed state) */
+table td button:active {
+  background-color: #b30000; /* Darker red when the button is pressed */
+}
+
+/* Adjust for small screens */
+@media screen and (max-width: 768px) {
+    table td button {
+      font-size: 12px; /* Make the buttons smaller on small screens */
+      padding: 5px 8px; /* Adjust padding on mobile */
+    }
+    .download-btn {
+      top: 15px;  /* Increase top margin if needed */
+      right: 15px; /* Keep it away from the edge */
+    }
+  }  
+
+
+ 
+  .mat-elevation-z8 {
+    position: relative; /* Ensures the button is positioned relative to this container */
+  }
+  
+  .create-button {
+    position: absolute;
+    top: 10px;    /* Distance from the top of the container */
+    right: 85px  ;  /* Distance from the right of the container */
+    z-index: 10;  /* Ensure it stays above other elements */
+  }
+  .create-button {
+    background-color: #cc0000; /* Red background */
+    color: white; /* Black text */
+  }
+  
+  .create-button:hover {
+    background-color: darkred; /* Darker shade when hovering */
+    color: white; /* White text on hover */
+  }
+
+  .custom-dialog .mat-dialog-container {
+    max-width: 100%; /* Ensure the dialog container can stretch fully */
+    width: 100%; /* Ensure full width utilization */
+    height: 800px; /* Set height as needed */
+  }
+
+ 
+
+ /* Download CSV button */
+.download-btn {
+  background-color: #cc0000; /* Red background */
+  color: white; /* White text */
+ 
+}
+
+.download-btn {
+  position: absolute;
+  top: 10px;    /* Distance from the top of the container */
+  right: 10px;  /* Distance from the right of the container */
+  z-index: 10;  /* Ensure it stays above other elements */
+}
+.download-btn:hover {
+  background-color: darkred; /* Darker shade when hovering */
+  color: white; /* White text on hover */
+}
+  .button-container {
+    display: flex;
+    justify-content: space-between; /* Space between buttons: one on the left, one on the right */
+    margin-bottom: 20px; /* Optional: Adds space below the buttons */
+  }
+  
+  .create-button {
+    margin-right: auto; /* Pushes the Create Template button to the left */
+  }
+
+
+  /* Dialog content style */
+.mat-dialog-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+mat-dialog-content {
+  font-size: 14px;
+}
+
+mat-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: space-between;
+}
+.edit-btn {
+  position: relative;
+  padding: 10px; /* Ensure some padding to make space for the name above */
+}
+
+.name-on-hover {
+  position: absolute;
+  bottom: 100%;  /* Places the name above the button */
+  left: 50%;
+  transform: translateX(-50%);  /* Centers the name horizontally */
+  margin-bottom: 8px;  /* Adds space between the name and the button */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  white-space: nowrap;  /* Prevents the name from wrapping */
+  z-index: 10;  /* Ensure the name is on top of other elements */
+}
+
+.edit-btn:hover .name-on-hover {
+  opacity: 1;
+  visibility: visible;
+}
+
+.edit-icon, .delete-icon {
+  cursor: pointer;
+  font-size: 24px; /* Adjust the size of the icon */
+  margin-right: 8px; /* Space between icons */
+}
+.edit-icon:hover {
+  color: green; /* Change color on hover */
+}
+.delete-icon:hover {
+  color: red; /* Change color on hover */
+}
+
+.edit-icon {
+  background-color: #d3d3d3;   /* Light grey background */
+  padding: 10px;                /* Add padding around the icon */
+  display: inline-flex;         /* Ensure the icon is inline-flex to center it */
+  align-items: center;          /* Center the icon vertically */
+  justify-content: center;      /* Center the icon horizontally */
+  transition: background-color 0.3s ease;  /* Smooth transition on hover */
+}
+
+.delete-icon {
+  background-color: #d3d3d3;   /* Light grey background */
+  padding: 10px;                /* Add padding around the icon */
+  display: inline-flex;         /* Ensure the icon is inline-flex to center it */
+  align-items: center;          /* Center the icon vertically */
+  justify-content: center;      /* Center the icon horizontally */
+  transition: background-color 0.3s ease;  /* Smooth transition on hover */
+}

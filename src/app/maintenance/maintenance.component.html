@@ -1,0 +1,154 @@
+<div class="mat-elevation-z8">
+    <h3>ELT Employee & Admins</h3>
+
+   
+    <!-- Search Box -->
+    <mat-form-field appearance="fill">
+      <mat-label>Search</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Search by Name or Email" />
+    </mat-form-field>
+        <button mat-raised-button class="download-btn" (click)="openDownloadDialog()" ><mat-icon>file_download</mat-icon></button>
+
+     <!-- Create Button at the top -->
+     <button mat-raised-button color="warn"  *ngIf="canCreateUser()" class="create-button" (click)="openCreateMaintenanceDialog()">Add</button>
+
+    <!-- Table -->
+    <table mat-table [dataSource]="dataSource">
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
+  
+      <ng-container matColumnDef="fullName">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.fullName}} </td>
+      </ng-container>
+      <!-- Email Column -->
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef> UserName </th>
+        <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+      </ng-container>
+      <ng-container matColumnDef="userTitle">
+        <th mat-header-cell *matHeaderCellDef> Title </th>
+        <td mat-cell *matCellDef="let element"> {{element.userTitle}} </td>
+      </ng-container>
+      <ng-container matColumnDef="adminFullName">
+        <th mat-header-cell *matHeaderCellDef> Admin </th>
+        <td mat-cell *matCellDef="let element"> {{element.adminFullName}} </td>
+      </ng-container>
+     
+     
+  
+      <!-- Status Column -->
+      <ng-container matColumnDef="personExceptionStatus">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element"> {{element.personExceptionStatus}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nmUpdate">
+        <th mat-header-cell *matHeaderCellDef> Updated By </th>
+        <td mat-cell *matCellDef="let element"  matTooltip="{{element.nmUpdate}}" matTooltipPosition="above"> {{element.updatedByFullName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="dtUpdate">
+        <th mat-header-cell *matHeaderCellDef> Updated At </th>
+        <td mat-cell *matCellDef="let element"> {{element.dtUpdate}} </td>
+      </ng-container>
+  
+      <!-- Action Column (Create and Edit Buttons) -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-icon class="edit-icon" *ngIf="canEditUser()" (click)="openEditUserDialog(element)" matTooltip="edit" matTooltipPosition="above" matTooltipShowDelay="500">edit</mat-icon>
+          <mat-icon class="delete-icon" *ngIf="canDeleteUser()" (click)="deleteRecord(element)" matTooltip="delete" matTooltipPosition="above" matTooltipShowDelay="500">delete</mat-icon>
+        </td>
+      </ng-container>
+
+      <!-- Header and Row definitions -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+ 
+    <!-- Second Table (New Table) -->
+  <!-- <div style="margin-top: 20px; overflow-x: auto;">
+    <h3>Setting: Admin Data</h3>
+    <table mat-table [dataSource]="secondTableData">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="securityRoles">
+        <th mat-header-cell *matHeaderCellDef> Role </th>
+        <td mat-cell *matCellDef="let element"> {{element.securityRoles}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button (click)="openEditUserDialog(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="deleteRecord(element)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="secondTableColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: secondTableColumns;"></tr>
+    </table>
+  </div> -->
+
+  <!-- Pagination for second table -->
+  <!-- <mat-paginator [length]="secondTableData"
+                 [pageSize]="5"
+                 [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons>
+  </mat-paginator> -->
+
+  <!-- <div style="margin-top: 20px; overflow-x: auto;">
+    <h3>List</h3>
+  
+    <table mat-table [dataSource]="thirdTableData">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Notification ID </th>
+        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="value">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element">{{ element.value }}</td>
+      </ng-container>
+  
+   
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-button (click)="onNotificationActionClick(element)">Edit</button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="thirdTableColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: thirdTableColumns;"></tr>
+    </table>
+  
+    <mat-paginator [length]="thirdTableData.data.length" [pageSize]="5" 
+    [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+   -->
+  </div>
+  <!-- Third Table (Notifications) -->

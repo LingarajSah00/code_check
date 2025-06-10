@@ -1,0 +1,78 @@
+<h8 mat-dialog-title>
+    Text for Notification Template - 
+    <font color="#cc0000">To Store Compliance New Hire Welcome</font>
+  </h8>
+  
+  <mat-dialog-content>
+    <!-- Quill Editor Container -->
+    <div class="button-group-fixed">
+      <button mat-icon-button (click)="toggleHTMLMode1()" class="right-button1" >
+        <mat-icon>{{ htmlMode ? 'edit'  : 'code'}}</mat-icon> <!-- Change icon based on htmlMode -->
+      </button>
+      <button (click)="openEmailDialog()" class="send-email-btn">
+        <mat-icon>email</mat-icon>  <!-- You can use an Angular Material icon here -->
+      </button>
+      <button mat-icon-button (click)="insertHorizontalRule()" matTooltip="Insert Horizontal Line">
+        <mat-icon>horizontal_rule</mat-icon>
+      </button>
+      <button mat-icon-button (click)="insertTable()" id="insert-table-button" matTooltip="Insert Table">
+        <mat-icon>grid_on</mat-icon>
+      </button>
+      
+    </div>
+    <div class="dropdown-container">
+      <!-- Dropdown for Predefined Text Snippets -->
+      <mat-form-field appearance="fill" style="width: 100%;">
+        <mat-label>Dynamic Merge Tags</mat-label>
+        <mat-select [(value)]="selectedText" (selectionChange)="onSnippetSelect($event)">
+            <mat-option *ngFor="let snippet of textSnippets" [value]="snippet.tag" [matTooltip]="snippet.description"   matTooltipClass="dynamic-tooltip"
+            aria-label="Button with dynamic tooltip">
+                {{ snippet.tag }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <!-- Drag-and-drop text container that updates based on selected snippet -->
+    <div *ngIf="selectedText" class="draggable-text" 
+         [draggable]="true" (dragstart)="onDragStart($event, selectedText)">
+        {{ selectedText }}
+    </div>
+  </div>
+    <!-- <div #editorContainer id="editor" 
+    style="height: 700px; width: 100%;" 
+    (drop)="onDrop($event)" 
+    (dragover)="onDragOver($event)">
+</div>   -->
+<div #editorContainer>
+  <quill-editor *ngIf="!htmlMode"
+    (ngModel)="(htmlContent)"
+    [modules]="modules"
+    [theme]="'snow'"
+    (onEditorCreated)="EditorCreated($event)"
+    (onContentChanged)="(htmlContent)"
+  ></quill-editor>
+</div>
+
+<div #editorContainer>
+  <quill-editor *ngIf="htmlMode"
+    (ngModel)="(htmlContent)"
+    [modules]="modules"
+    [theme]="'snow'"
+    (onEditorCreated)="EditorCreated($event)"
+    (onContentChanged)="(htmlContent)"
+  ></quill-editor>
+</div>
+
+
+
+
+
+
+</mat-dialog-content>
+  
+  <mat-dialog-actions>
+   
+    <button mat-button class="right-button" (click)="cancel()">Cancel</button>
+    <button mat-button class="right-button" color="primary" (click)="saveChanges()">Save</button>
+  </mat-dialog-actions>
+  

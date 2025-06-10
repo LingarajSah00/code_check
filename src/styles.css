@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+/* src/styles.css */
+@import "quill/dist/quill.snow.css";
+@import "quill-table-better/dist/quill-table-better.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Custom font sizes for Quill */
+.ql-size-12px {
+    font-size: 12px !important;  /* Use !important if necessary to ensure it's applied */
+  }
+  
+  .ql-size-14px {
+    font-size: 14px !important;
+  }
+  
+  .ql-size-16px {
+    font-size: 16px !important;
+  }
+  
+  .ql-size-18px {
+    font-size: 18px !important;
+  }
+  
+  .ql-size-20px {
+    font-size: 20px !important;
+  }
+  
+  .ql-size-24px {
+    font-size: 24px !important;
+  }
+  
+  .ql-size-32px {
+    font-size: 32px !important;
+  }
+  

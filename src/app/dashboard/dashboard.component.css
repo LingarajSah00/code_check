@@ -1,0 +1,213 @@
+/* Sidebar container */
+.sidenav-container {
+  display: flex;
+  height: 100vh; /* Full screen height */
+}
+
+/* Sidebar style (mat-sidenav) */
+mat-sidenav {
+  background-color: #ffffff; /* White background for the sidenav */
+  color: #000000;  /* Black text color */
+  padding: 20px;
+  transition: all 0.3s ease; /* Smooth transition for expanding/collapsing */
+}
+
+/* Sidebar header (mat-toolbar) */
+.sidenav-header {
+  background-color: #d32f2f; /* Dark red background for toolbar */
+  color: white; /* White text */
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Sidebar links (mat-nav-list items) */
+.sidenav a {
+  color: black; /* Black text by default */
+  text-decoration: none;
+  display: flex;
+  align-items: center; /* Align icon and text horizontally */
+  padding: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover and color change */
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Sidebar link icon styling */
+.sidenav a mat-icon {
+  margin-right: 10px; /* Space between icon and text */
+  color: black; /* Black icon color */
+  font-size: 24px;
+}
+
+/* Hover effect for sidebar links */
+::ng-deep .sidenav a:hover {
+  background-color: rgba(255, 255, 255, 0.15); /* Subtle light red background on hover */
+  color: #f44336 !important; /* Ensure text color changes to red on hover */
+}
+
+/* Active link style */
+a.active {
+  font-weight: bold;
+  color: #f44336 !important; /* Ensure red color stays active */
+  background-color: #fafafa;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for active links to prevent color change */
+::ng-deep .sidenav a.active:hover {
+  background-color: #fafafa; /* Keep active background when hovered */
+  color: #f44336 !important; /* Ensure active text stays red on hover */
+}
+::ng-deep .sidenav a.active:focus {
+  color: #f44336 !important;  /* Red color on focus */
+  background-color: #fafafa;
+}
+/* Target mat-list-item within the sidenav */
+::ng-deep mat-nav-list .mat-list-item:hover {
+  color: #f44336 !important; /* Red text color on hover */
+  background-color: rgba(255, 255, 255, 0.15); /* Subtle light background */
+}
+/* Content area */
+mat-sidenav-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #faf9fd; /* Light red background for content area */
+  transition: padding 0.3s ease; /* Smooth transition on mobile collapse */
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-button {
+      display: block; /* Show the menu button on small screens */
+  }
+  .title {
+      display: none; /* Optionally hide the title on small screens */
+  }
+}
+
+/* Adjust content area padding for mobile */
+mat-sidenav-content {
+  padding-left: 10px; /* Less padding for mobile */
+  padding-right: 10px; /* Ensure content fits nicely on mobile */
+  background-color: white; /* Changed background to white */
+}
+
+/* Dashboard layout */
+.dashboard-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.dashboard-card {
+  width: 45%; /* Each card will take 45% of the container's width */
+  padding: 20px;
+}
+
+/* Canvas styling */
+canvas {
+  width: 100% !important; /* Ensure the canvas takes up the full width of the parent container */
+  height: 400px !important; /* Ensure the height is set */
+  border: 1px solid #ddd; /* Add a border to the canvas */
+}
+
+/* Card header */
+mat-card-header {
+  text-align: center;
+  background-color: #f5f5f5;
+}
+
+/* Title styling */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left; /* Ensure text aligns to the left */
+  flex: 0; /* Prevent title from taking up remaining space */
+}
+
+/* Toolbar styling */
+mat-toolbar {
+  display: flex;
+  justify-content: flex-start; /* Align all items to the left */
+  align-items: center; /* Vertically center the items */
+}
+
+.spacer {
+  flex: 1; /* This will take up all the available space and push the buttons to the right */
+}
+
+
+
+.mdc-button__label {
+  color: white;
+}
+
+/* Focus state for the list item */
+.mdc-list-item:focus .mdc-list-item__primary-text {
+  color: red !important;  /* Dark Red color when the item is focused */
+}
+
+/* Hover state for the list item */
+.mdc-list-item:hover .mdc-list-item__primary-text {
+  color: #cc0000 !important;  /* Lighter Red color on hover */
+}
+
+  /* Ensure the expansion panel's icon is on the left */
+mat-expansion-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white; 
+}
+
+/* Override the default flex layout of mat-expansion-panel-header */
+mat-expansion-panel-header mat-icon {
+  margin-right: 10px; /* Space between icon and title */
+  order: -1; /* Move the icon to the left */
+}
+
+/* Adjust the dropdown arrow (the expand/collapse icon) position */
+mat-expansion-panel-header .mat-expansion-indicator {
+  order: 1; /* Ensure dropdown arrow stays on the right */
+}
+
+
+
+
+
+.right-button {
+  background-color: #cc0000; /* Red background */
+  color: white; /* Black text */
+}
+
+.right-button:hover {
+  background-color: darkred; /* Darker shade when hovering */
+  color: white; /* White text on hover */
+}
+.right-button mat-button {
+  color: white !important;
+}
+.right-button.profile {
+  margin-right: 10px; /* Add space between Profile and Logout */
+}
+.mdc-button__label {
+  color: white;
+}
+
+
+/* Force text color to white inside mat-mdc-button */
+::ng-deep .mat-mdc-button .mdc-button__label {
+  color: white !important;
+}
+
+/* Handle active, focus, and disabled states for mat-mdc-button */
+::ng-deep .mat-mdc-button:active .mdc-button__label,
+::ng-deep .mat-mdc-button:focus .mdc-button__label,
+::ng-deep .mat-mdc-button:disabled .mdc-button__label {
+  color: white !important;
+}
