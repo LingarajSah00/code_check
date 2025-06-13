@@ -445,17 +445,18 @@ export class EditTemplateDialogComponent implements AfterViewInit {
     }
   }
 
-  toggleHTMLMode1(): void {
-    this.htmlMode = !this.htmlMode;
+   toggleHTMLMode1(): void {
+  this.htmlMode = !this.htmlMode;
 
-    if (this.htmlMode && this.quillEditorInstance) {
-      // Switching to HTML view
-      this.htmlContent = this.quillEditorInstance.root.innerHTML;
-    } else if (!this.htmlMode && this.quillEditorInstance) {
-      // Switching back to Quill view
-      this.quillEditorInstance.clipboard.dangerouslyPasteHTML(this.htmlContent);
-    }
+  if (!this.htmlMode) {
+    // Wait for Angular to render <quill-editor> before pasting HTML
+    setTimeout(() => {
+      if (this.quillEditorInstance && this.htmlContent) {
+        this.quillEditorInstance.clipboard.dangerouslyPasteHTML(this.htmlContent);
+      }
+    }, 0);
   }
+}
   updateTable(html: string) {
     console.log("udpated table", this.htmlContent);
 
